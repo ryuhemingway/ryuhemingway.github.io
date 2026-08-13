@@ -251,12 +251,17 @@ p.card-kicker,
   background: var(--accent-soft);
 }
 
-@media (max-width: 620px) {
+@media (max-width: 760px) {
   .nav-name span:last-child {
     display: none;
   }
   .nav-links a:not(.nav-cv) {
     font-size: 0.7rem;
+  }
+  /* the résumé button must never be pushed off screen: keep two jumps */
+  .nav-links a[href="#engineering"],
+  .nav-links a[href="#contact"] {
+    display: none;
   }
 }
 
@@ -289,7 +294,7 @@ p.card-kicker,
 
 .eyebrow {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.6rem;
   margin: 0 0 1.8rem;
   padding: 0.4rem 0.85rem 0.4rem 0.7rem;
@@ -299,6 +304,7 @@ p.card-kicker,
   font-size: 0.68rem;
 }
 .dot {
+  flex: none;
   width: 6px;
   height: 6px;
   border-radius: 50%;
