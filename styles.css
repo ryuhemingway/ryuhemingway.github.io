@@ -9,7 +9,9 @@
   --link: #14459b;
   --bg: #ffffff;
   --bg-alt: #f7f7f5;
-  --sans: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --sans:
+    "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --rail: 16rem;
   --gap: clamp(2.5rem, 5vw, 5rem);
@@ -248,7 +250,11 @@ strong {
 }
 .split-figures {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+.split-figures > * {
+  min-width: 0;
 }
 .split-figures figure {
   margin: 0;
