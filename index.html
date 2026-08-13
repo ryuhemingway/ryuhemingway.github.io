@@ -3,606 +3,428 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ryu Hemingway — AI engineering</title>
+    <title>Ryu Hemingway — AI Engineering</title>
     <meta
       name="description"
-      content="Ryu Hemingway builds AI systems that verify their own work: tool harnesses, local retrieval, and model routing. MSCS candidate at Northeastern, seeking a Summer 2027 AI engineering internship."
+      content="Ryu Hemingway — MSCS candidate at Northeastern University. Builds LLM tool harnesses, local retrieval systems, and model routing. Seeking a Summer 2027 AI engineering internship."
     />
     <meta name="author" content="Ryu Hemingway" />
-    <meta name="theme-color" content="#0c0b0a" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ryu Hemingway — AI engineering" />
+    <meta property="og:title" content="Ryu Hemingway — AI Engineering" />
     <meta
       property="og:description"
-      content="Tool harnesses, local retrieval, and model routing. Shipped Ghost, a notarized macOS AI workspace: 66K lines of Swift, 83 verified tools, 763 tests."
+      content="Tool harnesses, local retrieval, model routing. Shipped Ghost, a notarized macOS AI assistant: 66,500 lines of Swift, 83 verified tools, 763 tests."
     />
     <meta property="og:image" content="assets/img/ghost-hero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c0b0a'/><text x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23d0603a' text-anchor='middle'>R</text></svg>"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23111111'/><text x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='600' fill='%23ffffff' text-anchor='middle'>R</text></svg>"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Reveal animations only exist if JS does. Without this class the page is fully visible. -->
-    <script>
-      document.documentElement.className += " js";
-    </script>
   </head>
 
   <body>
-    <a class="skip" href="#work">Skip to work</a>
-    <div class="grain" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
 
-    <!-- ───────────────────────── NAV ───────────────────────── -->
-    <header class="nav">
-      <a class="nav-name" href="#top">
-        <span class="nav-initial">R</span>
-        <span>Ryu Hemingway</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#engineering">Engineering</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cv" href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">
-          Résumé <span aria-hidden="true">↓</span>
-        </a>
-      </nav>
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <div>
+          <h1>Ryu Hemingway</h1>
+          <p class="role">AI engineering · San Jose, CA</p>
+        </div>
+        <ul class="masthead-links">
+          <li><a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a></li>
+          <li><a href="https://github.com/ryuhemingway" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        </ul>
+      </div>
     </header>
 
-    <main id="top">
-      <!-- ───────────────────────── HERO ───────────────────────── -->
-      <section class="hero">
-        <div class="hero-inner">
-          <p class="eyebrow reveal">
-            <span class="dot" aria-hidden="true"></span>
-            Seeking a Summer 2027 AI engineering internship
-          </p>
+    <main id="main" class="wrap">
+      <!-- ── Summary ─────────────────────────────────────────── -->
+      <section class="intro">
+        <p class="summary">
+          I build the layer around the model: tool harnesses that execute and verify real
+          actions, local retrieval over private documents, routing across local and hosted
+          providers, and the permission boundaries that make all of it safe to run on someone's
+          machine. Most of that experience comes from designing, building and shipping
+          <a href="#ghost">Ghost</a>, a native macOS AI assistant, currently at version 2.2.0.
+        </p>
+        <p class="summary">
+          MS Computer Science candidate at Northeastern University (Align program, Silicon
+          Valley), graduating May 2027. Previously a year of medical school and a year of
+          clinical documentation at UCSF Benioff Children's Hospital Oakland.
+          <strong>Seeking a Summer 2027 AI engineering internship.</strong>
+        </p>
 
-          <h1 class="display reveal">
-            I build AI systems that<br />
-            <em>verify</em> their own work.
-          </h1>
-
-          <p class="lede reveal">
-            Most AI features stop at the model's answer. The interesting engineering starts
-            after it: routing a prompt to the model that should handle it, giving that model
-            tools that actually execute and report back what really happened, retrieving the
-            right context from a local index, and drawing a hard line around data that must
-            never leave the machine. That is the layer I work in.
-          </p>
-
-          <p class="meta-line reveal">
-            MSCS candidate, Northeastern University &nbsp;·&nbsp; San Jose, CA &nbsp;·&nbsp;
-            previously first-year medical school &amp; clinical documentation
-          </p>
-
-          <div class="hero-actions reveal">
-            <a class="btn btn-primary" href="#work">See the work</a>
-            <a class="btn" href="mailto:hemingwayrb@gmail.com">Get in touch</a>
+        <dl class="facts">
+          <div>
+            <dt>Shipped</dt>
+            <dd>66,500 lines of Swift across 161 files</dd>
           </div>
-
-        </div>
-
-        <div class="hero-figure reveal">
-          <figure class="shot shot-hero">
-            <img
-              src="assets/img/ghost-hero.jpg"
-              alt="Ghost answering a question in a frosted panel hanging from the MacBook camera notch, with provider, model and timing chips above the answer"
-              loading="eager"
-              width="1400"
-              height="1050"
-            />
-            <figcaption>
-              Ghost 2.2.0 — the answer surface, summoned with ⌥Space anywhere in macOS.
-            </figcaption>
-          </figure>
-        </div>
-
-        <dl class="stats reveal">
-          <div class="stat">
-            <dt>Swift shipped</dt>
-            <dd><span class="num" data-count="66500">66,500</span><span class="unit">lines</span></dd>
-              <p>across 161 files, notarized and public</p>
-            </div>
-            <div class="stat">
-            <dt>Tools in the harness</dt>
-            <dd><span class="num" data-count="83">83</span><span class="unit">verified</span></dd>
-              <p>permission-gated, path-bounded, result-checked</p>
-            </div>
-            <div class="stat">
-            <dt>Test cases</dt>
-            <dd><span class="num" data-count="763">763</span><span class="unit">passing</span></dd>
-              <p>routing, tool execution, egress policy</p>
-            </div>
-            <div class="stat">
+          <div>
+            <dt>Tool harness</dt>
+            <dd>83 permission-gated tools</dd>
+          </div>
+          <div>
+            <dt>Test coverage</dt>
+            <dd>763 tests across 68 suites</dd>
+          </div>
+          <div>
             <dt>Model providers</dt>
-            <dd><span class="num" data-count="8">8</span><span class="unit">+ BYO CLI</span></dd>
-              <p>local and hosted, behind one interface</p>
-            </div>
+            <dd>8 local and hosted, plus BYO CLI</dd>
+          </div>
         </dl>
       </section>
 
-      <!-- ───────────────────────── WORK: GHOST ───────────────────────── -->
-      <section id="work" class="section">
-        <div class="section-head reveal">
-          <p class="kicker">Selected work — 01</p>
-          <h2 class="h2">Ghost</h2>
-          <p class="sub">A local-first macOS AI workspace, designed and shipped solo.</p>
-        </div>
+      <!-- ── Ghost ───────────────────────────────────────────── -->
+      <section id="ghost">
+        <h2>Ghost — native macOS AI assistant</h2>
 
-        <div class="project-meta reveal">
-          <div>
-            <span class="label">Role</span>
-            <span>Sole engineer &amp; designer</span>
-          </div>
-          <div>
-            <span class="label">Stack</span>
-            <span>Swift · SwiftUI · AppKit · SQLite FTS5 · AWS Lambda + DynamoDB</span>
-          </div>
-          <div>
-            <span class="label">Status</span>
-            <span>Shipped · v2.2.0 · signed &amp; notarized · Sparkle auto-updates</span>
-          </div>
-          <div class="project-links">
-            <a href="https://integratedagentics.com/ghost" target="_blank" rel="noopener">
-              Live site <span aria-hidden="true">↗</span>
-            </a>
-            <a href="https://github.com/ryuhemingway/Ghost-App" target="_blank" rel="noopener">
-              Docs &amp; releases <span aria-hidden="true">↗</span>
-            </a>
-            <span class="note">Source is closed; happy to walk through it in an interview.</span>
-          </div>
-        </div>
+        <table class="spec">
+          <tr>
+            <th scope="row">Role</th>
+            <td>Sole engineer and designer</td>
+          </tr>
+          <tr>
+            <th scope="row">Stack</th>
+            <td>Swift, SwiftUI, AppKit, SQLite (FTS5), AWS Lambda, DynamoDB, Sparkle</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td>Shipped, v2.2.0 — signed, notarized, auto-updating, paid</td>
+          </tr>
+          <tr>
+            <th scope="row">Links</th>
+            <td>
+              <a href="https://integratedagentics.com/ghost" target="_blank" rel="noopener">Product site</a>,
+              <a href="https://github.com/ryuhemingway/Ghost-App" target="_blank" rel="noopener">documentation and releases</a>.
+              Source is closed; I can walk through it in an interview.
+            </td>
+          </tr>
+        </table>
 
-        <p class="body-lg reveal">
-          Ghost started as a question I kept running into as a user: why does an AI assistant
-          make me trust it? A model can claim it wrote the file, moved the event, or read the
-          document, and a thin wrapper will happily print that claim as fact. Ghost is built the
-          other way around. Every capability is a real function the app owns, the app checks
-          permissions and path boundaries before it runs, and what comes back to the model is
-          the actual result — including the failure.
+        <p>
+          A model can claim it wrote the file, moved the event, or read the document, and a thin
+          wrapper will print that claim as fact. Ghost is built the other way around: every
+          capability is a function the app owns, the app checks permissions and path boundaries
+          before it runs, and what returns to the model is the actual result, including the
+          failure.
         </p>
 
-        <!-- Evidence 01 — harness -->
-        <article class="evidence reveal">
-          <div class="evidence-text">
-            <p class="kicker">The problem it solves — 01</p>
-            <h3 class="h3">A capability harness, not a prompt that hopes</h3>
-            <p>
-              Every prompt goes through a local intent classifier first — no network call — which
-              picks one of fourteen intents and, with it, the route: a fully local model in LM
-              Studio or Ollama, a hosted API, or the user's own Claude Code or Codex
-              subscription. Only then is a tool schema assembled, and it is assembled from the
-              permissions that are actually switched on, so a disabled capability is invisible to
-              the model rather than merely discouraged.
-            </p>
-            <p>
-              Execution re-checks that same policy, because a schema is a suggestion and a gate
-              is not. Tools carry a risk tier; the destructive ones always require confirmation,
-              and the confirmation dialog is shown the real argument JSON rather than the model's
-              description of it, so a persuasive sentence cannot stand in for what will run.
-              Unknown tool names fail closed.
-            </p>
-            <ul class="tags">
-              <li>14 intents</li>
-              <li>3 risk tiers</li>
-              <li>83 tools</li>
-              <li>fail-closed default</li>
-            </ul>
-          </div>
+        <figure>
+          <img
+            src="assets/img/ghost-hero.jpg"
+            alt="Ghost answering a question in a panel hanging from the MacBook camera notch, with provider, model and timing shown above the answer"
+            width="1200"
+            height="1153"
+          />
+          <figcaption>Ghost 2.2.0, summoned with ⌥Space anywhere in macOS.</figcaption>
+        </figure>
 
-          <div class="evidence-figure">
-            <!-- routing diagram -->
-            <div class="diagram" role="img" aria-label="Diagram: a prompt passes through a local intent classifier, then a route selector choosing local model, hosted API, or your own CLI subscription, then a permission gate and path check, then execution, and finally a verified result returned to the model.">
-              <div class="diag-row">
-                <span class="node node-in">prompt</span>
-              </div>
-              <div class="diag-arrow"><span></span></div>
-              <div class="diag-row">
-                <span class="node">intent classifier <b>local only</b></span>
-              </div>
-              <div class="diag-arrow"><span></span></div>
-              <div class="diag-row diag-fan">
-                <span class="node node-alt">local model</span>
-                <span class="node node-alt">hosted API</span>
-                <span class="node node-alt">your CLI plan</span>
-              </div>
-              <div class="diag-arrow"><span></span></div>
-              <div class="diag-row">
-                <span class="node node-gate">permission gate + path check</span>
-              </div>
-              <div class="diag-arrow"><span></span></div>
-              <div class="diag-row">
-                <span class="node node-gate">execute · re-check policy</span>
-              </div>
-              <div class="diag-arrow"><span></span></div>
-              <div class="diag-row">
-                <span class="node node-out">real result, not a claim</span>
-              </div>
-            </div>
+        <h3>Capability harness</h3>
+        <ul>
+          <li>
+            A local intent classifier runs first, with no network call, and selects one of
+            fourteen intents. That choice determines the route: a local model in LM Studio or
+            Ollama, a hosted API, or the user's own Claude Code or Codex subscription.
+          </li>
+          <li>
+            The tool schema is assembled from the permissions that are actually enabled, so a
+            disabled capability is invisible to the model rather than discouraged. Execution
+            re-checks the same policy.
+          </li>
+          <li>
+            Tools carry three risk tiers. Destructive ones always require confirmation, and the
+            confirmation dialog receives the real argument JSON rather than the model's
+            description of it. Unknown tool names fail closed.
+          </li>
+          <li>
+            Local models are probed on first launch for tool-calling support and assigned the
+            safest calling convention they can handle, so models without native function calling
+            still get the harness.
+          </li>
+        </ul>
 
-            <figure class="shot">
-              <img
-                src="assets/img/ghost-routing.jpg"
-                alt="Ghost's routing settings, showing the chosen provider and model alongside the current route and the reason it was selected"
-                loading="lazy"
-                width="1400"
-                height="1050"
-              />
-              <figcaption>Routing is inspectable: every answer can show which route it took and why.</figcaption>
-            </figure>
-          </div>
-        </article>
+        <pre class="pipeline">
+prompt
+  → intent classifier            (on device, no network)
+  → route: local model | hosted API | user's CLI plan
+  → permission gate + path check
+  → execute, re-check policy
+  → verified result returned to the model</pre>
 
-        <!-- Evidence 02 — RAG -->
-        <article class="evidence evidence-flip reveal">
-          <div class="evidence-text">
-            <p class="kicker">The problem it solves — 02</p>
-            <h3 class="h3">Retrieval that runs on the machine it searches</h3>
-            <p>
-              Ghost indexes documents and source code across roughly thirty formats into a local
-              SQLite database with FTS5, layered with on-device semantic recall for the cases
-              where wording and meaning diverge. Answers come back cited, with the source in
-              hand, so a claim can be checked instead of believed.
-            </p>
-            <p>
-              The details that mattered were unglamorous. Match terms are split on
-              non-alphanumerics so no FTS operator survives from user input; the index is chmod
-              0600 on open; retrieved passages are delineated before the model sees them, under
-              a standing rule that retrieved text is data, never instructions. In 2.2.0 I moved
-              retrieval off the main thread after profiling showed it was costing a quarter of a
-              second of dead UI on an ordinary question, and over a second on the slow path —
-              about twenty times faster now, and the window no longer freezes on Return.
-            </p>
-            <ul class="tags">
-              <li>SQLite FTS5</li>
-              <li>~30 formats</li>
-              <li>semantic recall</li>
-              <li>prompt-injection delineation</li>
-            </ul>
-          </div>
-          <div class="evidence-figure">
-            <figure class="shot shot-free">
-              <img
-                src="assets/img/ghost-rag.jpg"
-                alt="A Ghost answer with numbered inline citations and a references list linking each source"
-                loading="lazy"
-                width="1600"
-                height="1541"
-              />
-              <figcaption>Sourced answers: inline markers resolve to a reference list you can open.</figcaption>
-            </figure>
-          </div>
-        </article>
+        <figure>
+          <img
+            src="assets/img/ghost-routing.jpg"
+            alt="Ghost's routing settings showing the selected provider and model, the current route, and the reason that route was chosen"
+            loading="lazy"
+            width="1200"
+            height="1006"
+          />
+          <figcaption>Routing is inspectable: every answer can show the route it took and why.</figcaption>
+        </figure>
 
-        <!-- Evidence 03 — privacy invariant -->
-        <article class="evidence reveal">
-          <div class="evidence-text">
-            <p class="kicker">The problem it solves — 03</p>
-            <h3 class="h3">One invariant, enforced at a single choke point</h3>
-            <p>
-              Messages, Notes, Mail and Contacts never enter a cloud model's context. Not as an
-              answer, not as background memory, not as a tool result quietly folded back into the
-              conversation. The rule lives in one sensitivity classifier and is enforced where
-              every provider's tool results converge, so it holds for providers I have not written
-              yet.
-            </p>
-            <p>
-              It has a real cost, and the honest version of this section is the cost: if you want
-              AI to touch your iMessages, you have to point Ghost at a local model, and if you
-              have not, Ghost refuses rather than degrading quietly. I took that trade because a
-              privacy guarantee that bends under convenience is not a guarantee — and because
-              defaults do the actual work, so every capability ships off.
-            </p>
-            <ul class="tags">
-              <li>on-device only</li>
-              <li>single enforcement point</li>
-              <li>off by default</li>
-              <li>Keychain-held secrets</li>
-            </ul>
-          </div>
-          <div class="evidence-figure">
-            <figure class="shot">
-              <img
-                src="assets/img/ghost-privacy.jpg"
-                alt="Ghost's Privacy and Access settings: individual switches for web access, local files, Mac automation, Messages and FaceTime, screen capture and OCR, and terminal inspection"
-                loading="lazy"
-                width="1400"
-                height="1050"
-              />
-              <figcaption>Seven capability switches. Disabled tools are removed before the model sees a schema.</figcaption>
-            </figure>
-          </div>
-        </article>
+        <h3>Local retrieval</h3>
+        <ul>
+          <li>
+            Roughly thirty document and source-code formats indexed into a local SQLite database
+            with FTS5, with on-device semantic recall for queries where wording and meaning
+            diverge. Answers return cited, with the source available.
+          </li>
+          <li>
+            Match terms are split on non-alphanumerics so no FTS operator survives from user
+            input. The index is chmod 0600 on open.
+          </li>
+          <li>
+            Retrieved passages are delineated before the model sees them, under a standing rule
+            that retrieved text is data and never instructions.
+          </li>
+          <li>
+            Retrieval was moved off the main thread in 2.2.0 after profiling showed roughly
+            250&nbsp;ms of blocked UI on a typical question and over a second on the fallback
+            path, before the request had left the machine.
+          </li>
+        </ul>
 
-        <!-- Gallery -->
-        <div class="gallery reveal">
-          <figure class="shot">
-            <img src="assets/img/ghost-quick-ask.jpg" alt="Ghost at rest as a single input pill hanging from the camera notch" loading="lazy" width="1400" height="1050" />
-            <figcaption>At rest: no Dock icon, no window — one pill under the notch.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="assets/img/ghost-terminal.jpg" alt="Ghost's terminal section running a shell command inside the panel" loading="lazy" width="1600" height="911" />
-            <figcaption>A shell and a coding agent, on the route you already configured.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="assets/img/ghost-timer.jpg" alt="Ghost's pomodoro timer with a persistent study log, subject breakdown and focus history" loading="lazy" width="1600" height="813" />
-            <figcaption>Focus timer with a persistent study log, driven by one clock.</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src="assets/img/ghost-rag.jpg"
+            alt="A Ghost answer with numbered inline citations and a references list linking each source"
+            loading="lazy"
+            width="1600"
+            height="1541"
+          />
+          <figcaption>Inline citation markers resolve to a reference list.</figcaption>
+        </figure>
+
+        <h3>Privacy boundary</h3>
+        <ul>
+          <li>
+            Messages, Notes, Mail and Contacts never enter a cloud model's context — not as an
+            answer, not as background memory, not as a tool result folded back into the
+            conversation.
+          </li>
+          <li>
+            The rule lives in one sensitivity classifier and is enforced where every provider's
+            tool results converge, so it holds for providers that do not exist yet.
+          </li>
+          <li>
+            The tradeoff is real: acting on those apps requires a local model, and without one
+            Ghost refuses rather than degrading quietly. Every capability ships off by default;
+            API keys live in the Keychain.
+          </li>
+        </ul>
+
+        <figure>
+          <img
+            src="assets/img/ghost-privacy.jpg"
+            alt="Ghost's privacy settings with individual switches for web access, local files, Mac automation, Messages, screen capture and terminal"
+            loading="lazy"
+            width="1200"
+            height="1006"
+          />
+          <figcaption>Seven capability switches; disabled tools are removed before the model sees a schema.</figcaption>
+        </figure>
+
+        <h3>Distribution</h3>
+        <ul>
+          <li>
+            Signed and notarized release builds with hardened runtime, distributed through
+            Sparkle with an EdDSA-signed appcast.
+          </li>
+          <li>
+            Licensing runs on AWS Lambda and DynamoDB behind Stripe, issuing signed grants the
+            client verifies offline.
+          </li>
+        </ul>
       </section>
 
-      <!-- ───────────────────────── ENGINEERING JUDGMENT ───────────────────────── -->
-      <section id="engineering" class="section section-quiet">
-        <div class="section-head reveal">
-          <p class="kicker">How I work</p>
-          <h2 class="h2">What I got wrong, and what I did about it</h2>
-          <p class="sub">
-            Shipping the thing is half of it. The other half is being able to read your own code
-            honestly a month later.
-          </p>
-        </div>
+      <!-- ── Engineering notes ───────────────────────────────── -->
+      <section id="notes">
+        <h2>Engineering notes</h2>
+        <p class="lead">
+          Findings from auditing my own codebase and from a day spent using the app as a user.
+          Each of these shipped as a fix.
+        </p>
 
-        <div class="cards">
-          <article class="card reveal">
-            <p class="card-kicker">Audit</p>
-            <h3>Three types were a third of the app</h3>
-            <p>
-              I ran a structural audit of my own codebase and found that one store, one API
-              client and one window class accounted for roughly a third of all source. Naming
-              that is more useful than defending it: it explains why changes in unrelated
-              features kept colliding, and it set the refactor order.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <p class="card-kicker">Dead code</p>
-            <h3>An entire UI nobody could reach</h3>
-            <p>
-              The audit also turned up a full main-panel interface that no longer had a route
-              into it — I had replaced it with the notch surface and left it compiling. Deleting
-              it was the change; the lesson was that I had been reasoning about a version of the
-              app that no longer existed.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <p class="card-kicker">Security</p>
-            <h3>An approval check that compared too little</h3>
-            <p>
-              When a user named a page to fetch, Ghost skipped the approval prompt — reasonably,
-              since the user chose the destination. But the check compared only host and path, so
-              a fetched page could talk Ghost into re-requesting the same address with the
-              conversation appended as a query string. The check now covers the whole destination:
-              query, fragment, port and credentials.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <p class="card-kicker">Performance</p>
-            <h3>The main thread was doing SQLite</h3>
-            <p>
-              Document search ran synchronously on the main actor before a request had even left
-              the machine. It is the kind of bug that hides because it looks like the model being
-              slow. Profiling put it at ~250 ms typical and over a second on the fallback path;
-              moving it off the main thread and bounding the slow path made Return feel instant.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <p class="card-kicker">Distribution</p>
-            <h3>A version scheme that would have stranded everyone</h3>
-            <p>
-              Build numbers were derived by stripping the dots out of the version, which makes
-              2.1.0 sort below 2.0.10 — Sparkle would have offered the update to nobody. Encoding
-              it as major×10000 + minor×100 + patch fixed the ordering before it shipped.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <p class="card-kicker">Users</p>
-            <h3>It was quietly stealing ⌘/ from every app</h3>
-            <p>
-              A global shortcut sheet bound ⌘/ system-wide, which meant comment-toggle stopped
-              working in Xcode and VS Code with no visible cause and no preference to change it.
-              I found it by using my own app for a full day and writing down everything that
-              annoyed me. That list became release 2.2.0.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- ───────────────────────── OTHER WORK ───────────────────────── -->
-      <section class="section">
-        <div class="section-head reveal">
-          <p class="kicker">Also built</p>
-          <h2 class="h2">Other work</h2>
-          <p class="sub">Smaller systems, mostly tools I wanted to exist.</p>
-        </div>
-
-        <div class="list">
-          <article class="row reveal">
-            <div class="row-year">2026 · in progress</div>
-            <div class="row-body">
-              <h3>Fine-tuning evaluation harness</h3>
-              <p>
-                Building a reproducible evaluation loop for fine-tuned open models: fixed task
-                suites, deterministic scoring, and per-run diffs so a change in the training set
-                can be attributed rather than guessed at. Currently the project I am spending
-                most of my time on.
-              </p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>evals</li>
-                <li>open-weight models</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="row reveal">
-            <div class="row-year">2026</div>
-            <div class="row-body">
-              <h3>Language &amp; AI Principles — interactive curriculum</h3>
-              <p>
-                A terminal-based teaching CLI that runs lessons in C, Python and Java alongside
-                AI fundamentals, checking work against stdin-driven tasks instead of asking the
-                learner to self-report. Written to learn the material twice: once to understand
-                it, once to explain it well enough that a program can grade it.
-              </p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>YAML lesson authoring</li>
-                <li>private repo</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="row reveal">
-            <div class="row-year">2026</div>
-            <div class="row-body">
-              <h3>Ghost licensing service</h3>
-              <p>
-                The commercial side of Ghost: an AWS Lambda and DynamoDB service issuing signed,
-                offline-verifiable licence grants behind a Stripe checkout, with a trial window
-                the client can validate without phoning home on every launch. Deploy order
-                matters here — the signing key has to lead the client that trusts it.
-              </p>
-              <ul class="tags">
-                <li>AWS Lambda</li>
-                <li>DynamoDB</li>
-                <li>signed grants</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="row reveal">
-            <div class="row-year">2025–26</div>
-            <div class="row-body">
-              <h3>Command-line tools for my own workflow</h3>
-              <p>
-                A small suite of CLIs I use daily: a study-guide and flashcard generator, a
-                morning brief, a Mail.app triage tool built on AppleScript, and a Homebrew tap to
-                distribute them. Unremarkable individually; together they are where I learned
-                that the hard part of automation is the edge case you did not model.
-              </p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>AppleScript</li>
-                <li>Homebrew</li>
-              </ul>
-              <p class="row-links">
-                <a href="https://github.com/ryuhemingway/homebrew-tap" target="_blank" rel="noopener">homebrew-tap ↗</a>
-                <a href="https://github.com/ryuhemingway/update-wifi" target="_blank" rel="noopener">update-wifi ↗</a>
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ───────────────────────── ABOUT ───────────────────────── -->
-      <section id="about" class="section section-quiet">
-        <div class="about">
-          <div class="about-text reveal">
-            <p class="kicker">About</p>
-            <h2 class="h2">From charts to systems</h2>
-            <p>
-              I spent a year in medical school and, before that, a year as a certified scribe in
-              pediatric orthopedics at UCSF Benioff Children's Hospital Oakland, documenting
-              roughly eight hundred hours of clinical encounters in a high-volume EMR. The job
-              was to capture what actually happened, in real time, precisely enough that someone
-              else could act on it safely — and to notice when the record and the reality had
-              drifted apart.
-            </p>
-            <p>
-              That turns out to be the same instinct that makes AI systems trustworthy. A model's
-              output is a claim about the world; a harness is the thing that checks it. I left
-              medicine for computer science because I wanted to build the system rather than
-              operate it, and I came in with a documentation habit that has made me a
-              considerably better engineer than my line count suggests: my own architecture
-              audit is the artifact I am proudest of, not the feature list.
-            </p>
-            <p>
-              I am now a second-year MSCS student in Northeastern's Align program in Silicon
-              Valley, graduating May 2027, and looking for a Summer 2027 internship where I can
-              work on applied AI infrastructure: harnesses, retrieval, evaluation, and getting
-              local models to do real work.
-            </p>
+        <dl class="notes">
+          <div>
+            <dt>Three types were a third of the app</dt>
+            <dd>
+              A structural audit showed one store, one API client and one window class accounted
+              for roughly a third of all source. That explained why changes to unrelated features
+              kept colliding, and it set the refactor order.
+            </dd>
           </div>
-
-          <aside class="about-side reveal">
-            <div class="side-block">
-              <h4>Education</h4>
-              <p>
-                <strong>Northeastern University</strong><br />
-                MS Computer Science (Align) · Silicon Valley<br />
-                <span class="quiet">Sept 2025 – May 2027</span>
-              </p>
-              <p>
-                <strong>St. George's University</strong><br />
-                School of Medicine, first year completed<br />
-                <span class="quiet">2023 – 2024</span>
-              </p>
-              <p>
-                <strong>The Ohio State University</strong><br />
-                BA Psychology · Dean's List<br />
-                <span class="quiet">2017 – 2021</span>
-              </p>
-            </div>
-
-            <div class="side-block">
-              <h4>Tools</h4>
-              <p class="quiet-list">
-                Python · Swift · JavaScript · SQL · C<br />
-                SwiftUI · AppKit · React · SQLite / FTS5<br />
-                AWS Lambda · DynamoDB · Git · Sparkle<br />
-                LM Studio · Ollama · Claude · Gemini · DeepSeek
-              </p>
-            </div>
-
-            <div class="side-block">
-              <h4>Coursework</h4>
-              <p class="quiet-list">
-                Foundations of AI · Algorithms · Data Structures &amp; Algorithms ·
-                Object-Oriented Design · Discrete Structures
-              </p>
-            </div>
-          </aside>
-        </div>
+          <div>
+            <dt>An entire UI nobody could reach</dt>
+            <dd>
+              The same audit found a full main-panel interface with no route into it, replaced by
+              the notch surface months earlier and still compiling. I had been reasoning about a
+              version of the app that no longer existed.
+            </dd>
+          </div>
+          <div>
+            <dt>An approval check that compared too little</dt>
+            <dd>
+              Naming a page to fetch skipped the approval prompt, reasonably, since the user chose
+              the destination. But the check compared only host and path, so a fetched page could
+              induce a re-request to the same address with the conversation appended as a query
+              string. The check now covers query, fragment, port and credentials.
+            </dd>
+          </div>
+          <div>
+            <dt>The main thread was doing SQLite</dt>
+            <dd>
+              Document search ran synchronously on the main actor before any request left the
+              machine — a bug that hides because it looks like the model being slow. Moving it off
+              the main thread and bounding the fallback path made submission feel instant.
+            </dd>
+          </div>
+          <div>
+            <dt>A version scheme that would have stranded every user</dt>
+            <dd>
+              Build numbers were derived by stripping dots from the version, which sorts 2.1.0
+              below 2.0.10. Sparkle would have offered the update to nobody. Encoding as
+              major×10000 + minor×100 + patch fixed the ordering before release.
+            </dd>
+          </div>
+          <div>
+            <dt>It was taking ⌘/ from every other app</dt>
+            <dd>
+              A global shortcut bound ⌘/ system-wide, so comment-toggle silently stopped working
+              in Xcode and VS Code, with no preference to change it. Found by using the app for a
+              full day and writing down every annoyance; that list became release 2.2.0.
+            </dd>
+          </div>
+        </dl>
       </section>
 
-      <!-- ───────────────────────── CONTACT ───────────────────────── -->
-      <section id="contact" class="contact">
-        <div class="contact-inner reveal">
-          <p class="kicker">Contact</p>
-          <h2 class="display display-sm">
-            If you are building the layer<br />between a model and the real world,<br />
-            <em>I would like to hear about it.</em>
-          </h2>
-          <div class="contact-links">
-            <a class="btn btn-primary" href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a>
-            <a class="btn" href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn" href="https://github.com/ryuhemingway" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      <!-- ── Other work ──────────────────────────────────────── -->
+      <section id="work">
+        <h2>Other projects</h2>
+        <dl class="notes">
+          <div>
+            <dt>Fine-tuning evaluation harness <span class="tag">in progress</span></dt>
+            <dd>
+              A reproducible evaluation loop for fine-tuned open-weight models: fixed task suites,
+              deterministic scoring, and per-run diffs so a change in the training set can be
+              attributed rather than guessed at. Python.
+            </dd>
           </div>
-        </div>
+          <div>
+            <dt>Language and AI Principles — interactive curriculum</dt>
+            <dd>
+              A terminal curriculum covering C, Python, Java and AI fundamentals. Lessons are
+              authored in YAML and graded against stdin-driven tasks rather than self-report.
+              Python. Private repository.
+            </dd>
+          </div>
+          <div>
+            <dt>Command-line tools</dt>
+            <dd>
+              A study-guide and flashcard generator, a morning brief, and a Mail.app triage tool
+              built on AppleScript, distributed through a
+              <a href="https://github.com/ryuhemingway/homebrew-tap" target="_blank" rel="noopener">Homebrew tap</a>.
+              Python and shell.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ── Background ──────────────────────────────────────── -->
+      <section id="background">
+        <h2>Background</h2>
+
+        <h3>Education</h3>
+        <table class="spec">
+          <tr>
+            <th scope="row">2025–2027</th>
+            <td>
+              <strong>Northeastern University</strong> — MS Computer Science (Align), Silicon
+              Valley. Foundations of AI, Algorithms, Data Structures and Algorithms,
+              Object-Oriented Design, Discrete Structures.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2023–2024</th>
+            <td>
+              <strong>St. George's University School of Medicine</strong> — first year of the MD
+              program completed before moving to computer science.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2017–2021</th>
+            <td><strong>The Ohio State University</strong> — BA Psychology. Dean's List.</td>
+          </tr>
+        </table>
+
+        <h3>Experience</h3>
+        <table class="spec">
+          <tr>
+            <th scope="row">2021–2022</th>
+            <td>
+              <strong>Medical scribe, pediatric orthopedics</strong> — UCSF Benioff Children's
+              Hospital Oakland. Documented 800+ hours of clinical encounters in a high-volume EMR,
+              wrote documentation protocols adopted across the scribe team, and trained three
+              incoming scribes.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2019–2022</th>
+            <td>
+              <strong>Disaster relief volunteer</strong> — American Red Cross Disaster Action
+              Team. Coordinated response logistics and built case tracking for resource
+              allocation.
+            </td>
+          </tr>
+        </table>
+
+        <h3>Tools</h3>
+        <table class="spec">
+          <tr>
+            <th scope="row">Languages</th>
+            <td>Python, Swift, JavaScript, SQL, C, HTML/CSS</td>
+          </tr>
+          <tr>
+            <th scope="row">Frameworks</th>
+            <td>SwiftUI, AppKit, React, SQLite/FTS5, Sparkle</td>
+          </tr>
+          <tr>
+            <th scope="row">Infrastructure</th>
+            <td>AWS Lambda, DynamoDB, S3, CloudFront, Git</td>
+          </tr>
+          <tr>
+            <th scope="row">Models</th>
+            <td>LM Studio, Ollama, Claude, Gemini, DeepSeek, OpenAI-compatible endpoints</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- ── Contact ─────────────────────────────────────────── -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Available for a Summer 2027 internship, and happy to talk before then about harnesses,
+          retrieval, evaluation, or getting local models to do useful work.
+        </p>
+        <ul class="contact-list">
+          <li>Email — <a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a></li>
+          <li>GitHub — <a href="https://github.com/ryuhemingway" target="_blank" rel="noopener">github.com/ryuhemingway</a></li>
+          <li>LinkedIn — <a href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener">linkedin.com/in/ryuhemingway</a></li>
+          <li>Résumé — <a href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">PDF</a></li>
+        </ul>
       </section>
     </main>
 
-    <footer class="footer">
-      <span>Ryu Hemingway · San Jose, CA</span>
-      <span class="quiet">Built by hand. No framework, no tracking.</span>
+    <footer class="wrap">
+      <p>Ryu Hemingway · San Jose, CA</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
