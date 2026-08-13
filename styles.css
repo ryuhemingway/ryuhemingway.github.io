@@ -1,4 +1,4 @@
-/* Ryu Hemingway — portfolio
+/* Ryu Hemingway, portfolio
    Sticky identity rail + wide content column. No script, no animation. */
 
 :root {
@@ -181,6 +181,12 @@ h3 {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--line);
 }
+h3.project {
+  font-size: 1.15rem;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  border-bottom: 0;
+}
 p {
   margin: 0 0 1rem;
   max-width: var(--measure);
@@ -205,13 +211,6 @@ strong {
   font-weight: 600;
 }
 
-.callout {
-  border-left: 3px solid var(--line-strong);
-  padding: 0.15rem 0 0.15rem 1rem;
-  margin: 2rem 0;
-  color: var(--muted);
-}
-
 /* ── two-column subsections ─────────────────────────────── */
 
 .split {
@@ -224,9 +223,6 @@ strong {
 .split-text ul,
 .split-text p {
   max-width: none;
-}
-.split-text .callout {
-  margin-bottom: 0;
 }
 .split-intro {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -283,28 +279,6 @@ strong {
 .spec dd {
   margin: 0;
   overflow-wrap: anywhere;
-}
-
-/* ── engineering notes: two columns of findings ─────────── */
-
-.notes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-  gap: 0 var(--gap);
-  margin: 0;
-  border-top: 1px solid var(--line);
-}
-.notes > div {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.notes dt {
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-.notes dd {
-  margin: 0;
-  color: var(--muted);
 }
 
 /* ── figures, video and diagrams ────────────────────────── */
@@ -389,9 +363,6 @@ footer {
   }
   .split-background h3:first-child {
     margin-top: 1.5rem;
-  }
-  .notes {
-    grid-template-columns: minmax(0, 1fr);
   }
 }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ryu Hemingway — Software &amp; AI Engineering</title>
+    <title>Ryu Hemingway, Software &amp; AI Engineering</title>
     <meta
       name="description"
       content="Ryu Hemingway builds LLM tool harnesses, local retrieval (RAG) systems and model routing. MS Computer Science candidate at Northeastern University, graduating December 2028. Seeking a Summer 2027 software or AI engineering internship."
@@ -26,7 +26,7 @@
     <meta property="og:site_name" content="Ryu Hemingway" />
     <meta
       property="og:title"
-      content="Ryu Hemingway — Software &amp; AI Engineering"
+      content="Ryu Hemingway, Software &amp; AI Engineering"
     />
     <meta
       property="og:description"
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Ryu Hemingway — Software &amp; AI Engineering"
+      content="Ryu Hemingway, Software &amp; AI Engineering"
     />
     <meta
       name="twitter:description"
@@ -111,9 +111,8 @@
           <p class="role">Software &amp; AI engineering<br />San Jose, CA</p>
 
           <nav class="nav" aria-label="Sections">
-            <a href="#ghost">Ghost</a>
+            <a href="#projects">Projects</a>
             <a href="#research">Research</a>
-            <a href="#notes">Engineering notes</a>
             <a href="#background">Background</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -161,17 +160,20 @@
       <main id="main">
         <section id="statement">
           <p class="statement">
-            I build the layer around the model: tool harnesses that execute and
-            verify real actions, local retrieval-augmented generation (RAG) over
-            private documents, routing across local and hosted providers, and
-            the permission boundaries that make all of it safe to run on
-            someone's machine.
+            I am a software and AI engineer in San Jose, finishing my master's
+            in computer science at Northeastern while building and shipping
+            Ghost, a notarized macOS AI assistant. I build the layer around the
+            model: tool harnesses that execute and verify real actions, local
+            retrieval-augmented generation (RAG) over private documents, routing
+            across local and hosted providers, and the permission boundaries
+            that make all of it safe to run on someone's machine.
           </p>
         </section>
 
-        <!-- ── Ghost ───────────────────────────────────────────── -->
-        <section id="ghost">
-          <h2>Ghost — native macOS AI assistant</h2>
+        <!-- ── Projects ────────────────────────────────────────── -->
+        <section id="projects">
+          <h2>Projects</h2>
+          <h3 class="project">Ghost, native macOS AI assistant</h3>
 
           <div class="split split-intro">
             <div class="split-text">
@@ -192,13 +194,6 @@
                 boundaries before it runs, and what returns to the model is the
                 actual result, including the failure.
               </p>
-
-              <p class="callout">
-                The most useful thing I can show you about how I work is not
-                this feature list. It is the six bugs I found auditing my own
-                code, and shipped fixes for — see
-                <a href="#notes">engineering notes</a>.
-              </p>
             </div>
             <div class="split-aside">
               <dl class="spec">
@@ -211,7 +206,7 @@
                       rel="noopener noreferrer"
                       >integratedagentics.com/ghost</a
                     >
-                    — product page and download
+                    , product page and download
                   </dd>
                 </div>
                 <div>
@@ -223,7 +218,7 @@
                       rel="noopener noreferrer"
                       >github.com/ryuhemingway/Ghost-App</a
                     >
-                    — release notes and documentation. The application source is
+                    , release notes and documentation. The application source is
                     closed; I am happy to walk through it in an interview.
                   </dd>
                 </div>
@@ -264,8 +259,8 @@
             <figcaption>
               26-second demo, no edits: Ghost is asked to create an HTML page of
               the Milky Way and put it on the desktop, writes the file, and the
-              browser opens the page it produced — routed to Claude Sonnet 5,
-              and the harness executed a real action rather than describing one.
+              browser opens the page it produced, routed to Claude Sonnet 5. The
+              harness executed a real action rather than describing one.
             </figcaption>
           </figure>
 
@@ -346,7 +341,7 @@
                 <li>
                   Prefill is the scarce resource. For offline-local providers,
                   Ghost narrows the tool schema to a focused subset chosen from
-                  the prompt — core tools only when nothing matches — instead of
+                  the prompt (core tools only when nothing matches) instead of
                   sending the full catalogue of eighty-plus. The subset is
                   chosen once and reused for every round, because changing it
                   mid-loop would invalidate the server's KV prefix cache and
@@ -361,8 +356,8 @@
                   them.
                 </li>
                 <li>
-                  The result: gemma-4-e2b running through LM Studio — no API
-                  key, no network — answers with the full tool harness and its
+                  The result: gemma-4-e2b running through LM Studio (no API key,
+                  no network) answers with the full tool harness and its
                   permission checks.
                 </li>
               </ul>
@@ -388,7 +383,7 @@
                   >
                 </video>
                 <figcaption>
-                  A local small model answering with the full tool harness — no
+                  A local small model answering with the full tool harness, no
                   API key, no network. 20 seconds.
                 </figcaption>
               </figure>
@@ -465,7 +460,7 @@
               <ul>
                 <li>
                   Messages, Notes, Mail and Contacts never enter a cloud model's
-                  context — not as an answer, not as background memory, not as a
+                  context: not as an answer, not as background memory, not as a
                   tool result folded back into the conversation.
                 </li>
                 <li>
@@ -535,12 +530,13 @@
 
         <!-- ── Research ──────────────────────────────────────── -->
         <section id="research">
-          <h2>Research — Huffman coding, analyzed end to end</h2>
+          <h2>Research</h2>
+          <h3 class="project">Huffman coding, analyzed end to end</h3>
           <p class="lead">
             A CS5008 research paper on Huffman coding: the optimality proof, a
             from-scratch Python implementation, and experiments testing the
-            theory's predictions against measured behavior — including the
-            places where they break.
+            theory's predictions against measured behavior, including the places
+            where they break.
           </p>
 
           <div class="split split-intro">
@@ -550,9 +546,9 @@
                   The complexity analysis keeps two parameters separate:
                   alphabet size n and input length m. Counting and encoding are
                   Θ(m); the merge loop is O(n log n), with the log factor traced
-                  to sorting, not merging — van Leeuwen's two-queue method
-                  builds the tree in linear time when the weights are already
-                  sorted. Working space is Θ(n), independent of input length.
+                  to sorting, not merging. Van Leeuwen's two-queue method builds
+                  the tree in linear time when the weights are already sorted.
+                  Working space is Θ(n), independent of input length.
                 </li>
                 <li>
                   Optimality is argued as a proof, not asserted: the exchange
@@ -563,7 +559,7 @@
                 <li>
                   Two experiments test the theory against measurement, seeded
                   identically on every run. Encoding settles at 0.158 µs per
-                  character and decoding at 0.463 µs — the flat per-character
+                  character and decoding at 0.463 µs, the flat per-character
                   cost exactly what Θ(m) predicts. The guarantee H ≤ L &lt; H +
                   1 held on all six tested distributions, five of them within
                   0.07 bits of the entropy floor.
@@ -574,7 +570,7 @@
                   tree it must carry costs more than compression saves. And a
                   codeword cannot be shorter than one bit, so a distribution
                   split nine-to-one compresses to exactly the same size as an
-                  even split — 1,267 bytes for both — the limitation arithmetic
+                  even split (1,267 bytes for both), the limitation arithmetic
                   coding was invented to remove.
                 </li>
                 <li>
@@ -595,7 +591,7 @@
                   height="973"
                 />
                 <figcaption>
-                  Cost per character settles to a constant as input grows — the
+                  Cost per character settles to a constant as input grows, the
                   measured Θ(m) behavior, with the fixed cost of building the
                   tree visible at small inputs.
                 </figcaption>
@@ -626,7 +622,7 @@
                   rel="noopener noreferrer"
                   >github.com/ryuhemingway/Lossless-Data-Compression-Research---Huffman-Coding-Algorithm</a
                 >
-                — paper, implementation, experiments and figures
+                , paper, implementation, experiments and figures
               </dd>
             </div>
             <div>
@@ -639,77 +635,8 @@
             <div>
               <dt>Code</dt>
               <dd>
-                Python, standard library only — huffman_coding.py,
+                Python, standard library only: huffman_coding.py,
                 test_huffman.py (22 tests), empirical_analysis.py
-              </dd>
-            </div>
-          </dl>
-        </section>
-
-        <!-- ── Engineering notes ───────────────────────────────── -->
-        <section id="notes">
-          <h2>Engineering notes</h2>
-          <p class="lead">
-            Six findings from auditing my own codebase and from a day spent
-            using the app as a user. Each of these shipped as a fix.
-          </p>
-
-          <dl class="notes">
-            <div>
-              <dt>Three types were a third of the app</dt>
-              <dd>
-                A structural audit showed one store, one API client and one
-                window class accounted for roughly a third of all source. That
-                explained why changes to unrelated features kept colliding, and
-                it set the refactor order.
-              </dd>
-            </div>
-            <div>
-              <dt>An entire UI nobody could reach</dt>
-              <dd>
-                The same audit found a full main-panel interface with no route
-                into it, replaced by the notch surface months earlier and still
-                compiling. I had been reasoning about a version of the app that
-                no longer existed.
-              </dd>
-            </div>
-            <div>
-              <dt>An approval check that compared too little</dt>
-              <dd>
-                Naming a page to fetch skipped the approval prompt, reasonably,
-                since the user chose the destination. But the check compared
-                only host and path, so a fetched page could induce a re-request
-                to the same address with the conversation appended as a query
-                string. The check now covers query, fragment, port and
-                credentials.
-              </dd>
-            </div>
-            <div>
-              <dt>The main thread was doing SQLite</dt>
-              <dd>
-                Document search ran synchronously on the main actor before any
-                request left the machine — a bug that hides because it looks
-                like the model being slow. Moving it off the main thread and
-                bounding the fallback path made submission feel instant.
-              </dd>
-            </div>
-            <div>
-              <dt>A version scheme that would have stranded every user</dt>
-              <dd>
-                Build numbers were derived by stripping dots from the version,
-                which sorts 2.1.0 below 2.0.10. Sparkle would have offered the
-                update to nobody. Encoding as major×10000 + minor×100 + patch
-                fixed the ordering before release.
-              </dd>
-            </div>
-            <div>
-              <dt>It was taking ⌘/ from every other app</dt>
-              <dd>
-                A global shortcut bound ⌘/ system-wide, so comment-toggle
-                silently stopped working in Xcode and VS Code, with no
-                preference to change it. Found by using the app for a full day
-                and writing down every annoyance; that list became release
-                2.2.0.
               </dd>
             </div>
           </dl>
@@ -737,7 +664,7 @@
                 <div>
                   <dt>2025–2028</dt>
                   <dd>
-                    <strong>Northeastern University</strong> — MS Computer
+                    <strong>Northeastern University</strong>: MS Computer
                     Science, Align program, Silicon Valley. Graduating December
                     2028.
                   </dd>
@@ -746,14 +673,14 @@
                   <dt>2023–2024</dt>
                   <dd>
                     <strong>St. George's University School of Medicine</strong>
-                    — completed the first year of the MD program before moving
+                    , completed the first year of the MD program before moving
                     to computer science.
                   </dd>
                 </div>
                 <div>
                   <dt>2021–2022</dt>
                   <dd>
-                    <strong>UCSF Benioff Children's Hospital Oakland</strong> —
+                    <strong>UCSF Benioff Children's Hospital Oakland</strong>:
                     medical scribe, pediatric orthopedics. Wrote documentation
                     protocols adopted across the scribe team and trained three
                     incoming scribes.
@@ -762,7 +689,7 @@
                 <div>
                   <dt>2017–2021</dt>
                   <dd>
-                    <strong>The Ohio State University</strong> — BA Psychology.
+                    <strong>The Ohio State University</strong>: BA Psychology.
                     Dean's List.
                   </dd>
                 </div>
@@ -783,9 +710,9 @@
                 A terminal curriculum for C, Python, Java and AI fundamentals,
                 where lessons are authored in YAML and graded against
                 stdin-driven tasks rather than self-report; and a set of
-                command-line tools I use daily — a study-guide and flashcard
+                command-line tools I use daily (a study-guide and flashcard
                 generator, a morning brief, and a Mail.app triage tool built on
-                AppleScript — distributed through a
+                AppleScript), distributed through a
                 <a
                   href="https://github.com/ryuhemingway/homebrew-tap"
                   target="_blank"

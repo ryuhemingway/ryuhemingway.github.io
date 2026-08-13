@@ -1,6 +1,6 @@
 # ryuhemingway.github.io
 
-Personal site — software &amp; AI engineering portfolio for Ryu Hemingway.
+Personal site, software &amp; AI engineering portfolio for Ryu Hemingway.
 
 Static and hand-written. No framework, no build step, no JavaScript, no tracking.
 
