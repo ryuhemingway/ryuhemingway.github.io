@@ -1,5 +1,5 @@
 /* Ryu Hemingway — portfolio
-   Plain document styling. One column, no script, no animation. */
+   Sticky identity rail + wide content column. No script, no animation. */
 
 :root {
   --text: #16181d;
@@ -11,7 +11,10 @@
   --bg-alt: #f7f7f5;
   --sans: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --wrap: 47rem;
+  --rail: 16rem;
+  --gap: clamp(2.5rem, 5vw, 5rem);
+  --pad: clamp(1.25rem, 3.5vw, 3.5rem);
+  --measure: 74ch;
 }
 
 *,
@@ -33,12 +36,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-.wrap {
-  max-width: var(--wrap);
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 img,
@@ -76,89 +73,115 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* ── masthead ───────────────────────────────────────────── */
+/* ── page layout ────────────────────────────────────────── */
 
-.masthead {
-  border-bottom: 1px solid var(--line-strong);
-  padding-bottom: 1.5rem;
-  margin-bottom: 2.5rem;
+.layout {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  gap: var(--gap);
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 3rem var(--pad) 0;
 }
-.masthead-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
-  padding-top: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 1.5rem;
+
+/* ── identity rail ──────────────────────────────────────── */
+
+.rail-inner {
+  position: sticky;
+  top: 3rem;
+  padding-bottom: 3rem;
 }
-.masthead h1 {
-  font-size: 1.5rem;
+.rail h1 {
+  font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0;
 }
 .role {
-  margin: 0.15rem 0 0;
+  margin: 0.35rem 0 1.75rem;
   color: var(--muted);
-  font-size: 0.95rem;
-}
-.masthead-links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
   font-size: 0.9rem;
-}
-
-.statement {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin: 0 0 1rem;
-}
-.availability {
-  margin: 0 0 1.5rem;
-  color: var(--muted);
-}
-.availability strong {
-  color: var(--text);
+  line-height: 1.45;
 }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   font-size: 0.9rem;
 }
 
-/* ── sections ───────────────────────────────────────────── */
+.rail-links {
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+.rail-links li {
+  margin-bottom: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.rail-note {
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.rail-note strong {
+  color: var(--text);
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+/* ── content column ─────────────────────────────────────── */
+
+main {
+  min-width: 0;
+  padding-bottom: 1rem;
+}
 
 section {
-  margin-bottom: 3rem;
-  scroll-margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 2rem;
 }
 section + section {
   border-top: 1px solid var(--line);
-  padding-top: 2.25rem;
+  padding-top: 2.5rem;
+}
+#statement {
+  margin-bottom: 2.5rem;
+}
+
+.statement {
+  font-size: clamp(1.35rem, 2.2vw, 1.95rem);
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  margin: 0;
+  max-width: 48ch;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0 0 1.1rem;
 }
 h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin: 2.25rem 0 0.6rem;
+  margin: 2.5rem 0 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
 }
 p {
   margin: 0 0 1rem;
+  max-width: var(--measure);
 }
 .lead {
   color: var(--muted);
@@ -167,9 +190,10 @@ p {
 ul {
   margin: 0 0 1rem;
   padding-left: 1.15rem;
+  max-width: var(--measure);
 }
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 li::marker {
   color: var(--line-strong);
@@ -182,8 +206,52 @@ strong {
 .callout {
   border-left: 3px solid var(--line-strong);
   padding: 0.15rem 0 0.15rem 1rem;
-  margin: 1.75rem 0;
+  margin: 2rem 0;
   color: var(--muted);
+}
+
+/* ── two-column subsections ─────────────────────────────── */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+.split-text ul,
+.split-text p {
+  max-width: none;
+}
+.split-text .callout {
+  margin-bottom: 0;
+}
+.split-intro {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+.split-aside .spec {
+  margin: 0;
+  max-width: none;
+}
+.split-aside p,
+.split-aside ul {
+  max-width: none;
+}
+.split-background .spec {
+  max-width: none;
+}
+.split-background h3:first-child {
+  margin-top: 0;
+}
+.split-aside .spec > div:first-child {
+  border-top: 0;
+}
+.split-figures {
+  display: grid;
+  gap: 1.5rem;
+}
+.split-figures figure {
+  margin: 0;
 }
 
 /* ── labelled field lists ───────────────────────────────── */
@@ -191,12 +259,13 @@ strong {
 .spec {
   margin: 0 0 1.5rem;
   font-size: 0.95rem;
+  max-width: var(--measure);
 }
 .spec > div {
   display: grid;
   grid-template-columns: 7.5rem minmax(0, 1fr);
-  gap: 0 1.25rem;
-  padding: 0.6rem 0;
+  gap: 0 1.5rem;
+  padding: 0.65rem 0;
   border-bottom: 1px solid var(--line);
 }
 .spec > div:first-child {
@@ -207,23 +276,25 @@ strong {
 }
 .spec dd {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
-/* ── note lists ─────────────────────────────────────────── */
+/* ── engineering notes: two columns of findings ─────────── */
 
 .notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+  gap: 0 var(--gap);
   margin: 0;
+  border-top: 1px solid var(--line);
 }
 .notes > div {
-  padding: 0.9rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--line);
-}
-.notes > div:first-child {
-  border-top: 1px solid var(--line);
 }
 .notes dt {
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
 }
 .notes dd {
   margin: 0;
@@ -242,10 +313,14 @@ figure video {
   background: var(--bg-alt);
 }
 figcaption {
-  margin-top: 0.5rem;
+  margin-top: 0.55rem;
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--muted);
+  max-width: 68ch;
+}
+.demo {
+  margin-top: 2rem;
 }
 .demo figcaption {
   color: var(--text);
@@ -253,7 +328,7 @@ figcaption {
 
 .pipeline {
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   line-height: 1.7;
   background: var(--bg-alt);
   border: 1px solid var(--line);
@@ -266,33 +341,95 @@ figcaption {
 
 footer {
   border-top: 1px solid var(--line);
-  padding-top: 1.25rem;
-  padding-bottom: 3rem;
+  margin-top: 2rem;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1.25rem var(--pad) 3rem;
   color: var(--muted);
   font-size: 0.85rem;
 }
-footer p {
+.footer-inner p {
   margin: 0;
 }
 
-/* ── narrow screens ─────────────────────────────────────── */
+/* ── wide screens: more air, slightly larger type ───────── */
 
-@media (max-width: 600px) {
-  .masthead-top {
-    align-items: flex-start;
+@media (min-width: 1500px) {
+  body {
+    font-size: 17px;
+  }
+  :root {
+    --rail: 18rem;
+  }
+}
+
+/* ── the side-by-side columns need width; collapse them first ─ */
+
+@media (max-width: 1200px) {
+  .split,
+  .split-intro,
+  .split-background {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+  .split-aside .spec > div:first-child {
+    border-top: 1px solid var(--line);
+  }
+  .split-background h3:first-child {
+    margin-top: 1.5rem;
+  }
+  .notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── one column ─────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
     padding-top: 2rem;
   }
-  .masthead-links {
-    gap: 0.6rem 1rem;
-    font-size: 0.85rem;
+  .rail-inner {
+    position: static;
+    padding-bottom: 0;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 1.5rem;
   }
-  .statement {
-    font-size: 1.1rem;
-    max-width: none;
+  .rail h1 {
+    font-size: 1.5rem;
+  }
+  .role {
+    margin-bottom: 1.25rem;
   }
   .nav {
-    gap: 0.6rem 1rem;
-    font-size: 0.85rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.25rem;
+  }
+  .rail-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+  }
+  .rail-links li {
+    margin: 0;
+  }
+  .statement {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .statement {
+    font-size: 1.2rem;
   }
   .spec > div {
     grid-template-columns: 1fr;
@@ -314,6 +451,10 @@ footer p {
 @media print {
   body {
     font-size: 11pt;
+  }
+  .layout {
+    display: block;
+    padding: 0;
   }
   figure,
   .skip,
