@@ -6,108 +6,120 @@
     <title>Ryu Hemingway — AI Engineering</title>
     <meta
       name="description"
-      content="Ryu Hemingway — MSCS candidate at Northeastern University. Builds LLM tool harnesses, local retrieval systems, and model routing. Seeking a Summer 2027 AI engineering internship."
+      content="Ryu Hemingway builds LLM tool harnesses, local retrieval systems and model routing. MS Computer Science candidate at Northeastern University, graduating December 2028. Seeking a Summer 2027 AI engineering internship."
     />
     <meta name="author" content="Ryu Hemingway" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://ryuhemingway.github.io/" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ryuhemingway.github.io/" />
+    <meta property="og:site_name" content="Ryu Hemingway" />
     <meta property="og:title" content="Ryu Hemingway — AI Engineering" />
     <meta
       property="og:description"
-      content="Tool harnesses, local retrieval, model routing. Shipped Ghost, a notarized macOS AI assistant: 66,500 lines of Swift, 83 verified tools, 763 tests."
+      content="Tool harnesses, local retrieval and model routing. Shipped Ghost, a notarized macOS AI assistant: 66,500 lines of Swift, 83 verified tools, 763 tests."
     />
-    <meta property="og:image" content="assets/img/ghost-hero.jpg" />
+    <meta property="og:image" content="https://ryuhemingway.github.io/assets/img/ghost-hero.jpg" />
+    <meta property="og:image:alt" content="The Ghost assistant answering a question on macOS." />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23111111'/><text x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='600' fill='%23ffffff' text-anchor='middle'>R</text></svg>"
+    <meta name="twitter:title" content="Ryu Hemingway — AI Engineering" />
+    <meta
+      name="twitter:description"
+      content="Tool harnesses, local retrieval and model routing. Shipped Ghost, a notarized macOS AI assistant."
     />
+    <meta name="twitter:image" content="https://ryuhemingway.github.io/assets/img/ghost-hero.jpg" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="assets/media/ghost-demo-poster.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ryu Hemingway",
+        "url": "https://ryuhemingway.github.io/",
+        "jobTitle": "AI engineer",
+        "email": "mailto:hemingwayrb@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Jose",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Northeastern University" },
+          { "@type": "CollegeOrUniversity", "name": "The Ohio State University" }
+        ],
+        "knowsAbout": [
+          "LLM tool use",
+          "Retrieval-augmented generation",
+          "Local language models",
+          "Swift",
+          "Python"
+        ],
+        "sameAs": [
+          "https://github.com/ryuhemingway",
+          "https://linkedin.com/in/ryuhemingway"
+        ]
+      }
+    </script>
   </head>
 
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
     <header class="masthead">
-      <div class="wrap masthead-inner">
-        <div>
-          <h1>Ryu Hemingway</h1>
-          <p class="role">AI engineering · San Jose, CA</p>
+      <div class="wrap">
+        <div class="masthead-top">
+          <div>
+            <h1>Ryu Hemingway</h1>
+            <p class="role">AI engineering · San Jose, CA</p>
+          </div>
+          <ul class="masthead-links">
+            <li><a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a></li>
+            <li><a href="https://github.com/ryuhemingway" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+          </ul>
         </div>
-        <ul class="masthead-links">
-          <li><a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a></li>
-          <li><a href="https://github.com/ryuhemingway" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
-        </ul>
+
+        <p class="statement">
+          I build the layer around the model: tool harnesses that execute and verify real
+          actions, local retrieval over private documents, routing across local and hosted
+          providers, and the permission boundaries that make all of it safe to run on someone's
+          machine.
+        </p>
+
+        <p class="availability">
+          MS Computer Science candidate at Northeastern University (Align program, Silicon
+          Valley), graduating December 2028. <strong>Seeking a Summer 2027 AI engineering
+          internship.</strong>
+        </p>
+
+        <nav class="nav" aria-label="Sections">
+          <a href="#ghost">Ghost</a>
+          <a href="#notes">Engineering notes</a>
+          <a href="#background">Background</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </header>
 
     <main id="main" class="wrap">
-      <!-- ── Summary ─────────────────────────────────────────── -->
-      <section class="intro">
-        <p class="summary">
-          I build the layer around the model: tool harnesses that execute and verify real
-          actions, local retrieval over private documents, routing across local and hosted
-          providers, and the permission boundaries that make all of it safe to run on someone's
-          machine. Most of that experience comes from designing, building and shipping
-          <a href="#ghost">Ghost</a>, a native macOS AI assistant, currently at version 2.2.0.
-        </p>
-        <p class="summary">
-          MS Computer Science candidate at Northeastern University (Align program, Silicon
-          Valley), graduating May 2027. Previously a year of medical school and a year of
-          clinical documentation at UCSF Benioff Children's Hospital Oakland.
-          <strong>Seeking a Summer 2027 AI engineering internship.</strong>
-        </p>
-
-        <dl class="facts">
-          <div>
-            <dt>Shipped</dt>
-            <dd>66,500 lines of Swift across 161 files</dd>
-          </div>
-          <div>
-            <dt>Tool harness</dt>
-            <dd>83 permission-gated tools</dd>
-          </div>
-          <div>
-            <dt>Test coverage</dt>
-            <dd>763 tests across 68 suites</dd>
-          </div>
-          <div>
-            <dt>Model providers</dt>
-            <dd>8 local and hosted, plus BYO CLI</dd>
-          </div>
-        </dl>
-      </section>
-
       <!-- ── Ghost ───────────────────────────────────────────── -->
       <section id="ghost">
         <h2>Ghost — native macOS AI assistant</h2>
 
-        <table class="spec">
-          <tr>
-            <th scope="row">Role</th>
-            <td>Sole engineer and designer</td>
-          </tr>
-          <tr>
-            <th scope="row">Stack</th>
-            <td>Swift, SwiftUI, AppKit, SQLite (FTS5), AWS Lambda, DynamoDB, Sparkle</td>
-          </tr>
-          <tr>
-            <th scope="row">Status</th>
-            <td>Shipped, v2.2.0 — signed, notarized, auto-updating, paid</td>
-          </tr>
-          <tr>
-            <th scope="row">Links</th>
-            <td>
-              <a href="https://integratedagentics.com/ghost" target="_blank" rel="noopener">Product site</a>,
-              <a href="https://github.com/ryuhemingway/Ghost-App" target="_blank" rel="noopener">documentation and releases</a>.
-              Source is closed; I can walk through it in an interview.
-            </td>
-          </tr>
-        </table>
+        <p>
+          Most of the work above comes from designing, building and shipping Ghost: a menu-bar
+          assistant that routes prompts to local or hosted models, searches your own documents,
+          and runs real actions on the machine. Sole engineer and designer. Version 2.2.0 is
+          signed, notarized and sold as a paid product with automatic updates.
+        </p>
 
         <p>
           A model can claim it wrote the file, moved the event, or read the document, and a thin
@@ -117,15 +129,58 @@
           failure.
         </p>
 
-        <figure>
-          <img
-            src="assets/img/ghost-hero.jpg"
-            alt="Ghost answering a question in a panel hanging from the MacBook camera notch, with provider, model and timing shown above the answer"
-            width="1200"
-            height="1153"
-          />
-          <figcaption>Ghost 2.2.0, summoned with ⌥Space anywhere in macOS.</figcaption>
+        <figure class="demo">
+          <video
+            controls
+            muted
+            playsinline
+            preload="none"
+            poster="assets/media/ghost-demo-poster.jpg"
+            width="1000"
+            height="650"
+          >
+            <source src="assets/media/ghost-demo.mp4" type="video/mp4" />
+            Your browser cannot play this video.
+            <a href="assets/media/ghost-demo.mp4">Download the demo (MP4, 13 seconds).</a>
+          </video>
+          <figcaption>
+            13-second demo, no edits: Ghost is asked for a playable game, writes the file to disk
+            and opens it. The browser is running the file it produced — the harness executed a
+            real action rather than describing one.
+          </figcaption>
         </figure>
+
+        <dl class="spec">
+          <div>
+            <dt>Try it</dt>
+            <dd>
+              <a href="https://integratedagentics.com/ghost" target="_blank" rel="noopener noreferrer">integratedagentics.com/ghost</a>
+              — product page and download
+            </dd>
+          </div>
+          <div>
+            <dt>Releases</dt>
+            <dd>
+              <a href="https://github.com/ryuhemingway/Ghost-App" target="_blank" rel="noopener noreferrer">github.com/ryuhemingway/Ghost-App</a>
+              — release notes and documentation. The application source is closed; I am happy to
+              walk through it in an interview.
+            </dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Swift, SwiftUI, AppKit, SQLite with FTS5, AWS Lambda, DynamoDB, Sparkle</dd>
+          </div>
+          <div>
+            <dt>Scale</dt>
+            <dd>66,500 lines across 161 files · 83 permission-gated tools · 763 tests in 68 suites · 8 model providers</dd>
+          </div>
+        </dl>
+
+        <p class="callout">
+          The most useful thing I can show you about how I work is not this feature list. It is
+          the six bugs I found auditing my own code, and shipped fixes for — see
+          <a href="#notes">engineering notes</a>.
+        </p>
 
         <h3>Capability harness</h3>
         <ul>
@@ -151,31 +206,42 @@
           </li>
         </ul>
 
-        <pre class="pipeline">
+        <figure>
+          <pre class="pipeline" aria-hidden="true">
 prompt
-  → intent classifier            (on device, no network)
-  → route: local model | hosted API | user's CLI plan
+  → intent classifier            on device, no network
+  → route                        local model | hosted API | user's CLI plan
   → permission gate + path check
   → execute, re-check policy
   → verified result returned to the model</pre>
+          <figcaption>
+            The request path: a prompt is classified on device, routed to a local model, a hosted
+            API or the user's own CLI subscription, checked against the permission policy and
+            path boundaries, executed, re-checked, and returned to the model as a verified
+            result.
+          </figcaption>
+        </figure>
 
         <figure>
-          <img
-            src="assets/img/ghost-routing.jpg"
-            alt="Ghost's routing settings showing the selected provider and model, the current route, and the reason that route was chosen"
-            loading="lazy"
-            width="1200"
-            height="1006"
-          />
+          <picture>
+            <source srcset="assets/img/ghost-routing.webp" type="image/webp" />
+            <img
+              src="assets/img/ghost-routing.jpg"
+              alt="A settings pane listing the active provider and model, the resolved route, and a plain-language reason for that route."
+              loading="lazy"
+              width="1200"
+              height="1006"
+            />
+          </picture>
           <figcaption>Routing is inspectable: every answer can show the route it took and why.</figcaption>
         </figure>
 
         <h3>Local retrieval</h3>
         <ul>
           <li>
-            Roughly thirty document and source-code formats indexed into a local SQLite database
-            with FTS5, with on-device semantic recall for queries where wording and meaning
-            diverge. Answers return cited, with the source available.
+            Roughly thirty document and source-code formats are indexed into a local SQLite
+            database with FTS5, with on-device semantic recall for queries where wording and
+            meaning diverge. Answers return cited, with the source available.
           </li>
           <li>
             Match terms are split on non-alphanumerics so no FTS operator survives from user
@@ -186,20 +252,38 @@ prompt
             that retrieved text is data and never instructions.
           </li>
           <li>
-            Retrieval was moved off the main thread in 2.2.0 after profiling showed roughly
-            250&nbsp;ms of blocked UI on a typical question and over a second on the fallback
-            path, before the request had left the machine.
+            Retrieval moved off the main thread in 2.2.0 after profiling showed roughly 250&nbsp;ms
+            of blocked UI on a typical question, and over a second on the fallback path, before
+            the request had left the machine.
           </li>
         </ul>
 
         <figure>
-          <img
-            src="assets/img/ghost-rag.jpg"
-            alt="A Ghost answer with numbered inline citations and a references list linking each source"
-            loading="lazy"
-            width="1600"
-            height="1541"
-          />
+          <pre class="pipeline" aria-hidden="true">
+question
+  → FTS5 match  +  on-device semantic recall
+  → passages delineated as data, never instructions
+  → model answers with inline citation markers
+  → markers resolve to the indexed source</pre>
+          <figcaption>
+            The retrieval path: a question runs against the local full-text index and an
+            on-device semantic pass, the passages are delineated as untrusted data before the
+            model sees them, and the answer carries citation markers that resolve back to the
+            indexed source.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="assets/img/ghost-rag.webp" type="image/webp" />
+            <img
+              src="assets/img/ghost-rag.jpg"
+              alt="An answer about the James Webb telescope with bracketed numbers after each claim and a references list beneath it."
+              loading="lazy"
+              width="1200"
+              height="1156"
+            />
+          </picture>
           <figcaption>Inline citation markers resolve to a reference list.</figcaption>
         </figure>
 
@@ -222,14 +306,35 @@ prompt
         </ul>
 
         <figure>
-          <img
-            src="assets/img/ghost-privacy.jpg"
-            alt="Ghost's privacy settings with individual switches for web access, local files, Mac automation, Messages, screen capture and terminal"
-            loading="lazy"
-            width="1200"
-            height="1006"
-          />
-          <figcaption>Seven capability switches; disabled tools are removed before the model sees a schema.</figcaption>
+          <pre class="pipeline" aria-hidden="true">
+tool result
+  → sensitivity classifier
+       sensitive (Messages, Notes, Mail, Contacts)
+         → local model            allowed
+         → cloud provider         refused, and the user is told why
+       everything else            → normal path</pre>
+          <figcaption>
+            The egress rule: every tool result passes a sensitivity classifier at the single
+            point where all providers converge. Personal-app content is allowed through to a
+            local model and refused to a cloud one, with the refusal explained rather than
+            silently downgraded.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="assets/img/ghost-privacy.webp" type="image/webp" />
+            <img
+              src="assets/img/ghost-privacy.jpg"
+              alt="A privacy settings pane with seven independent switches, one per capability, each with a one-line description of what it permits."
+              loading="lazy"
+              width="1200"
+              height="1006"
+            />
+          </picture>
+          <figcaption>
+            Seven capability switches; disabled tools are removed before the model sees a schema.
+          </figcaption>
         </figure>
 
         <h3>Distribution</h3>
@@ -249,8 +354,8 @@ prompt
       <section id="notes">
         <h2>Engineering notes</h2>
         <p class="lead">
-          Findings from auditing my own codebase and from a day spent using the app as a user.
-          Each of these shipped as a fix.
+          Six findings from auditing my own codebase and from a day spent using the app as a
+          user. Each of these shipped as a fix.
         </p>
 
         <dl class="notes">
@@ -306,120 +411,75 @@ prompt
         </dl>
       </section>
 
-      <!-- ── Other work ──────────────────────────────────────── -->
-      <section id="work">
-        <h2>Other projects</h2>
-        <dl class="notes">
-          <div>
-            <dt>Fine-tuning evaluation harness <span class="tag">in progress</span></dt>
-            <dd>
-              A reproducible evaluation loop for fine-tuned open-weight models: fixed task suites,
-              deterministic scoring, and per-run diffs so a change in the training set can be
-              attributed rather than guessed at. Python.
-            </dd>
-          </div>
-          <div>
-            <dt>Language and AI Principles — interactive curriculum</dt>
-            <dd>
-              A terminal curriculum covering C, Python, Java and AI fundamentals. Lessons are
-              authored in YAML and graded against stdin-driven tasks rather than self-report.
-              Python. Private repository.
-            </dd>
-          </div>
-          <div>
-            <dt>Command-line tools</dt>
-            <dd>
-              A study-guide and flashcard generator, a morning brief, and a Mail.app triage tool
-              built on AppleScript, distributed through a
-              <a href="https://github.com/ryuhemingway/homebrew-tap" target="_blank" rel="noopener">Homebrew tap</a>.
-              Python and shell.
-            </dd>
-          </div>
-        </dl>
-      </section>
-
       <!-- ── Background ──────────────────────────────────────── -->
       <section id="background">
         <h2>Background</h2>
 
-        <h3>Education</h3>
-        <table class="spec">
-          <tr>
-            <th scope="row">2025–2027</th>
-            <td>
-              <strong>Northeastern University</strong> — MS Computer Science (Align), Silicon
-              Valley. Foundations of AI, Algorithms, Data Structures and Algorithms,
-              Object-Oriented Design, Discrete Structures.
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2023–2024</th>
-            <td>
-              <strong>St. George's University School of Medicine</strong> — first year of the MD
-              program completed before moving to computer science.
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2017–2021</th>
-            <td><strong>The Ohio State University</strong> — BA Psychology. Dean's List.</td>
-          </tr>
-        </table>
+        <p>
+          I spent a year in medical school and, before that, a year as a certified scribe in
+          pediatric orthopedics at UCSF Benioff Children's Hospital Oakland, documenting 800+
+          hours of clinical encounters in a high-volume EMR. The job was to record what actually
+          happened, precisely enough that someone else could act on it safely, and to notice when
+          the record and the reality had drifted apart. That is close to what a tool harness does
+          for a language model, and it is why I care about the difference between a claimed
+          result and a verified one.
+        </p>
 
-        <h3>Experience</h3>
-        <table class="spec">
-          <tr>
-            <th scope="row">2021–2022</th>
-            <td>
-              <strong>Medical scribe, pediatric orthopedics</strong> — UCSF Benioff Children's
-              Hospital Oakland. Documented 800+ hours of clinical encounters in a high-volume EMR,
-              wrote documentation protocols adopted across the scribe team, and trained three
-              incoming scribes.
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2019–2022</th>
-            <td>
-              <strong>Disaster relief volunteer</strong> — American Red Cross Disaster Action
-              Team. Coordinated response logistics and built case tracking for resource
-              allocation.
-            </td>
-          </tr>
-        </table>
+        <dl class="spec">
+          <div>
+            <dt>2025–2028</dt>
+            <dd>
+              <strong>Northeastern University</strong> — MS Computer Science, Align program,
+              Silicon Valley. Graduating December 2028.
+            </dd>
+          </div>
+          <div>
+            <dt>2023–2024</dt>
+            <dd>
+              <strong>St. George's University School of Medicine</strong> — completed the first
+              year of the MD program before moving to computer science.
+            </dd>
+          </div>
+          <div>
+            <dt>2021–2022</dt>
+            <dd>
+              <strong>UCSF Benioff Children's Hospital Oakland</strong> — medical scribe,
+              pediatric orthopedics. Wrote documentation protocols adopted across the scribe team
+              and trained three incoming scribes.
+            </dd>
+          </div>
+          <div>
+            <dt>2017–2021</dt>
+            <dd><strong>The Ohio State University</strong> — BA Psychology. Dean's List.</dd>
+          </div>
+        </dl>
 
-        <h3>Tools</h3>
-        <table class="spec">
-          <tr>
-            <th scope="row">Languages</th>
-            <td>Python, Swift, JavaScript, SQL, C, HTML/CSS</td>
-          </tr>
-          <tr>
-            <th scope="row">Frameworks</th>
-            <td>SwiftUI, AppKit, React, SQLite/FTS5, Sparkle</td>
-          </tr>
-          <tr>
-            <th scope="row">Infrastructure</th>
-            <td>AWS Lambda, DynamoDB, S3, CloudFront, Git</td>
-          </tr>
-          <tr>
-            <th scope="row">Models</th>
-            <td>LM Studio, Ollama, Claude, Gemini, DeepSeek, OpenAI-compatible endpoints</td>
-          </tr>
-        </table>
+        <h3>Tools I reach for</h3>
+        <p>
+          Swift and Python daily; LM Studio and Ollama for local inference; Claude, Gemini and
+          DeepSeek APIs; SQLite with FTS5 for retrieval; AWS Lambda, DynamoDB and Stripe for the
+          licensing service; Sparkle for signed distribution. Also JavaScript, SQL, C, SwiftUI,
+          AppKit and React.
+        </p>
+
+        <h3>Also built</h3>
+        <p>
+          A terminal curriculum for C, Python, Java and AI fundamentals, where lessons are
+          authored in YAML and graded against stdin-driven tasks rather than self-report; and a
+          set of command-line tools I use daily — a study-guide and flashcard generator, a
+          morning brief, and a Mail.app triage tool built on AppleScript — distributed through a
+          <a href="https://github.com/ryuhemingway/homebrew-tap" target="_blank" rel="noopener noreferrer">Homebrew tap</a>.
+        </p>
       </section>
 
       <!-- ── Contact ─────────────────────────────────────────── -->
       <section id="contact">
         <h2>Contact</h2>
         <p>
-          Available for a Summer 2027 internship, and happy to talk before then about harnesses,
+          Available for a Summer 2027 internship, and glad to talk before then about harnesses,
           retrieval, evaluation, or getting local models to do useful work.
+          <a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a>.
         </p>
-        <ul class="contact-list">
-          <li>Email — <a href="mailto:hemingwayrb@gmail.com">hemingwayrb@gmail.com</a></li>
-          <li>GitHub — <a href="https://github.com/ryuhemingway" target="_blank" rel="noopener">github.com/ryuhemingway</a></li>
-          <li>LinkedIn — <a href="https://linkedin.com/in/ryuhemingway" target="_blank" rel="noopener">linkedin.com/in/ryuhemingway</a></li>
-          <li>Résumé — <a href="assets/Ryu-Hemingway-Resume.pdf" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
       </section>
     </main>
 

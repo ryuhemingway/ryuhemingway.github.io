@@ -6,11 +6,16 @@ Static and hand-written. No framework, no build step, no JavaScript, no tracking
 
 ```
 index.html      the whole page
-styles.css      ~300 lines of plain document styling
+styles.css      plain document styling, ~330 lines
+favicon.svg
 assets/
   Ryu-Hemingway-Resume.pdf
-  img/          Ghost screenshots, cropped to the app window (~950 KB total)
+  img/          Ghost screenshots, cropped to the app window (jpg + webp)
+  media/        13-second demo video, poster frame
 ```
+
+Screenshots ship as `<picture>` with a WebP source and a JPEG fallback. The demo video is
+`preload="none"` behind a poster, so it costs nothing until someone presses play.
 
 ## Run it locally
 
@@ -40,6 +45,7 @@ Every number on the page traces to something checkable in the Ghost repository:
 | 83 tools | distinct `ghost_*` tool identifiers in `Sources/` |
 | 763 tests | `@Test` cases across 68 suites in `Tests/` |
 | 8 providers + BYO CLI | Ghost's provider picker |
+| Graduating December 2028 | Northeastern program record |
 
 If Ghost changes, update the facts box in `index.html` and the résumé PDF together, so a recruiter
 reading both never sees two different numbers.
