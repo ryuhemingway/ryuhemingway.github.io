@@ -208,7 +208,7 @@
         <!-- ── Skills ──────────────────────────────────────────── -->
         <section id="skills">
           <h2>Skills</h2>
-          <dl class="spec spec-wide">
+          <dl class="spec">
             <div>
               <dt>Languages</dt>
               <dd>Swift, Python, JavaScript, SQL, C, HTML and CSS</dd>
@@ -373,12 +373,15 @@
             <div class="split-figures">
               <figure>
                 <pre class="pipeline" aria-hidden="true">
-    prompt
-      → intent classifier            on device, no network
-      → route                        local model | hosted API | user's CLI plan
-      → permission gate + path check
-      → execute, re-check policy
-      → verified result returned to the model</pre>
+prompt
+  → intent classifier
+       on device, no network
+  → route
+       local model | hosted API
+       | user's own CLI plan
+  → permission gate + path check
+  → execute, re-check policy
+  → verified result to the model</pre>
                 <figcaption>
                   The request path: classified on device, routed to a local
                   model, a hosted API or the user's own CLI subscription,
@@ -497,11 +500,14 @@
             <div class="split-figures">
               <figure>
                 <pre class="pipeline" aria-hidden="true">
-    question
-      → FTS5 match  +  on-device semantic recall
-      → passages delineated as data, never instructions
-      → model answers with inline citation markers
-      → markers resolve to the indexed source</pre>
+question
+  → FTS5 match
+       + on-device semantic recall
+  → passages delineated as data,
+       never instructions
+  → model answers with inline
+       citation markers
+  → markers resolve to the source</pre>
                 <figcaption>
                   The retrieval path: a question runs against the local
                   full-text index and an on-device semantic pass, passages are
@@ -552,12 +558,17 @@
             <div class="split-figures">
               <figure>
                 <pre class="pipeline" aria-hidden="true">
-    tool result
-      → sensitivity classifier
-           sensitive (Messages, Notes, Mail, Contacts)
-             → local model            allowed
-             → cloud provider         refused, and the user is told why
-           everything else            → normal path</pre>
+tool result
+  → sensitivity classifier
+
+     sensitive: Messages, Notes,
+     Mail, Contacts
+       → local model     allowed
+       → cloud provider  refused,
+            and the user is told why
+
+     everything else
+       → normal path</pre>
                 <figcaption>
                   The egress rule: every tool result passes a sensitivity
                   classifier at the single point where all providers converge.
@@ -589,7 +600,7 @@
           </div>
 
           <h3>Distribution</h3>
-          <ul>
+          <ul class="band">
             <li>
               Signed and notarized release builds with hardened runtime,
               distributed through Sparkle with an EdDSA-signed appcast.
@@ -608,7 +619,7 @@
 
           <!-- ── smaller shipped work ──────────────────────────── -->
           <h3>Also shipped</h3>
-          <dl class="spec spec-wide">
+          <dl class="spec">
             <div>
               <dt>ClaudeMaxing</dt>
               <dd>
@@ -626,7 +637,7 @@
               </dd>
             </div>
             <div>
-              <dt>Programming<br />Fundamentals and AI</dt>
+              <dt>Programming Fundamentals and AI</dt>
               <dd>
                 A terminal curriculum for C, Python, Java and AI engineering
                 principles: 244 lessons that grade by compiling and running your
@@ -761,7 +772,7 @@
 
           <div class="split split-background">
             <div class="split-text">
-              <dl class="spec">
+              <dl class="spec spec-tight">
                 <div>
                   <dt>2025–2028</dt>
                   <dd>
