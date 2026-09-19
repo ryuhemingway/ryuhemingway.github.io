@@ -41,20 +41,23 @@ Live at `https://ryuhemingway.github.io` within a minute or two. After that, upd
 
 Every number on the page traces to something checkable. Most come from `METRICS.md` in the Ghost
 repo, which `script/metrics.sh` generates from the working tree; the rest are re-derived by the
-commands below. Exact counts are used where a generated source exists (`1,094` tests, `76` tools),
-rounded down where the number drifts release to release (`76,000+` lines).
-Last re-derived **16 August 2026** against Ghost 2.7.0.
+commands below. Exact counts are used where a generated source exists (`2,141` tests, `80` tools),
+rounded down where the number drifts release to release (`108,000+` lines).
+Last re-derived **19 September 2026** against Ghost 3.8.0 (commit `952ff29`).
 
 | Claim                                                                                     | How to re-check                                                                                                                                         |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 76,000+ lines / 179 files                                                                 | `find Sources -name '*.swift' \| wc -l`, then `find Sources -name '*.swift' -exec cat {} + \| wc -l` (76,307)                                           |
-| 76 tools                                                                                  | `manifest("ghost_*"` entries in `Sources/Ghost/Services/GhostCapabilityHarness.swift`. Count the manifest, not `ghost_*` string literals, which include aliases and references and come to 83 |
-| 1,094 tests, 114 suites                                                                   | `@Test` and `@Suite` counts in `Tests/`; also the "Unit tests" row of Ghost's generated `METRICS.md`                                                     |
+| 108,000+ lines / 245 files                                                                | `find Sources -name '*.swift' \| wc -l`, then `find Sources -name '*.swift' -exec cat {} + \| wc -l` (108,763)                                         |
+| 80 tools                                                                                  | `manifest("ghost_*"` entries in `Sources/Ghost/Services/GhostCapabilityHarness.swift`. Count the manifest, not `ghost_*` string literals, which include aliases and references and come to 88 |
+| 2,141 tests across 127 files                                                              | `@Test` count in `Tests/`; also the "Unit tests" row of Ghost's generated `METRICS.md`                                                                   |
 | 8 providers + BYO CLI                                                                     | cases in `Sources/Ghost/Models/GhostProvider.swift`                                                                                                     |
-| Version 2.7.0, August 2026                                                                | `VERSION` in the Ghost repo; `gh release list --repo ryuhemingway/Ghost-App`                                                                             |
-| 24.6% / 43.5% line coverage, CI-regenerated metrics                                       | the coverage rows of Ghost's `METRICS.md`, produced by `script/metrics.sh` from `swift test --enable-code-coverage`                                      |
+| Version 3.8.0, September 2026                                                                | `VERSION` in the Ghost repo; `gh release list --repo ryuhemingway/Ghost-App`                                                                             |
+| 14 intent kinds, 4 risk tiers, CI-regenerated metrics                                     | the "Intent kinds" and "Tool risk tiers" rows of Ghost's `METRICS.md`, produced by `script/metrics.sh`. Line coverage currently reports `n/a` and is no longer claimed on the page |
+| ~250 ms of blocked UI before retrieval moved off the main thread                          | self-measured during the 2026-08 daily-use audit; **no generated source in the Ghost repo** — do not move this figure onto the résumé or anywhere it would be read as a re-derived metric |
+| Roughly thirty document and source-code formats                                           | `readableExtensions` in `Sources/Ghost/Services/GhostDocumentText.swift` (32 as of Ghost 3.8.0)                                                          |
 | Graduating April 2028                                                                     | Northeastern program record                                                                                                                             |
-| ClaudeMaxing, Homebrew tap                                                                | public repos `ryuhemingway/ClaudeMaxing` (MIT) and `ryuhemingway/homebrew-tap`                                                                           |
+| Homebrew tap                                                                              | public repo `ryuhemingway/homebrew-tap`                                                                                                                 |
+| Leadway International, ~$100M distributor, 70-80% unstructured orders                     | my own engagement; the percentage came from operations interviews on site and is not independently published                                    |
 | 244 lessons, execution-based grading                                                      | `counts.total` in `curriculum/_index.json` and `tests/test_execution_grading.py` in the curriculum repo (private). Say "lessons", not "authored lessons": only 74 of the 244 are authored, 170 are migrated |
 | Huffman figures and claims                                                                | figures in the paper repo `ryuhemingway/Lossless-Data-Compression-Research---Huffman-Coding-Algorithm`; reproduce with `empirical_analysis.py`, seed 42 |
 | Small-model claims (schema narrowing, KV-prefix reuse, streaming fallback, vision gating) | `GhostLocalToolSelector` and `DirectAPIClient+ToolLoops.swift` in the Ghost source                                                                      |

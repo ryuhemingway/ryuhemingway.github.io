@@ -6,7 +6,7 @@
     <title>Ryu Hemingway, Software &amp; AI Engineering</title>
     <meta
       name="description"
-      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Graduating April 2028. Seeking a Summer 2027 software or AI engineering internship. Authorized to work in the US without sponsorship."
+      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Part-time AI engineer on a production LLM order-intake system, and sole engineer behind Ghost, a shipped macOS AI assistant. Graduating April 2028. Seeking a Summer 2027 software or AI engineering internship. Authorized to work in the US without sponsorship."
     />
     <meta name="author" content="Ryu Hemingway" />
     <link rel="canonical" href="https://ryuhemingway.github.io/" />
@@ -21,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Tool harnesses, local retrieval and model routing. Shipped Ghost, a notarized macOS AI assistant: 76,000+ lines of Swift, 76 permission-gated tools, 1,094 tests. Sole engineer."
+      content="Tool harnesses, local retrieval and model routing. Shipped Ghost, a notarized macOS AI assistant: 108,000+ lines of Swift, 80 permission-gated tools, 2,141 tests. Sole engineer."
     />
     <meta
       property="og:image"
@@ -83,6 +83,8 @@
           "Model routing",
           "Embeddings and semantic search",
           "LLM evaluation",
+          "Structured output and JSON schema validation",
+          "Entity resolution",
           "Algorithms and data structures",
           "Swift",
           "Python"
@@ -169,13 +171,15 @@
             test harnesses, and the permission boundaries that make an agent
             safe to run on someone's machine. Most of it ships inside Ghost, a
             signed and notarized macOS AI assistant I designed, built and sell
-            as its sole engineer.
+            as its sole engineer. I also build production LLM systems in
+            industry: I am the part-time AI and software engineer on an
+            order-intake pipeline at a ~$100M B2B wholesale distributor.
           </p>
 
           <ul class="proof">
-            <li><b>76,000+</b><span>lines of Swift, shipped</span></li>
-            <li><b>76</b><span>permission-gated tools</span></li>
-            <li><b>1,094</b><span>tests, 114 suites</span></li>
+            <li><b>108,000+</b><span>lines of Swift, shipped</span></li>
+            <li><b>80</b><span>permission-gated tools</span></li>
+            <li><b>2,141</b><span>tests across 127 files</span></li>
             <li><b>8</b><span>model providers, local and hosted</span></li>
           </ul>
 
@@ -214,11 +218,31 @@
               <dd>Swift, Python, JavaScript, SQL, C, HTML and CSS</dd>
             </div>
             <div>
-              <dt>AI systems</dt>
+              <dt>LLM and agentic AI</dt>
               <dd>
-                LLM tool-calling harnesses, retrieval-augmented generation
-                (RAG), local inference with LM Studio and Ollama, model routing,
-                prompt-injection boundaries, evaluation and test harnesses
+                LLM tool calling and function-call harnesses, agentic AI
+                workflows, structured output under JSON schema validation, model
+                routing and provider abstraction across hosted APIs and
+                on-device inference, Anthropic Claude, Gemini and DeepSeek APIs,
+                LM Studio and Ollama
+              </dd>
+            </div>
+            <div>
+              <dt>Retrieval and RAG</dt>
+              <dd>
+                Retrieval-augmented generation, multi-format document ingestion,
+                sentence-aware chunking, inverted indexes, BM25 ranking, SQLite
+                FTS5 full-text search, embeddings and semantic search,
+                incremental index sync, entity resolution
+              </dd>
+            </div>
+            <div>
+              <dt>Evaluation and reliability</dt>
+              <dd>
+                Evaluation and test harnesses, held-out test sets, precision and
+                recall, human-in-the-loop review queues, permission gating and
+                risk tiering, prompt-injection boundaries, data-residency
+                constraints, CI-enforced test suites
               </dd>
             </div>
             <div>
@@ -306,17 +330,19 @@
                 <div>
                   <dt>Scale</dt>
                   <dd>
-                    76,307 lines across 179 files · 76 permission-gated tools ·
-                    1,094 tests in 114 suites · 8 model providers · 24.6% line
-                    coverage overall, 43.5% across non-UI logic. Every figure is
-                    regenerated from the working tree, not typed by hand.
+                    108,763 lines across 245 files · 80 permission-gated tools ·
+                    2,141 tests across 127 files · 8 model providers · 14 intent
+                    kinds · 4 tool risk tiers. Every figure is regenerated from
+                    the working tree by <code>script/metrics.sh</code>, not typed
+                    by hand.
                   </dd>
                 </div>
                 <div>
                   <dt>Status</dt>
                   <dd>
-                    Shipped and maintained, version 2.7.0, August 2026. 20+
-                    paying users, whose feedback has driven released fixes.
+                    Shipped and maintained, version 3.8.0, September 2026. 20+
+                    paying users, whose feedback has driven every release since
+                    2.0.
                   </dd>
                 </div>
               </dl>
@@ -363,7 +389,7 @@
                   rather than discouraged. Execution re-checks the same policy.
                 </li>
                 <li>
-                  Tools carry three risk tiers. Destructive ones always require
+                  Tools carry four risk tiers. Destructive ones always require
                   confirmation, and the dialog receives the real argument JSON
                   rather than the model's description of it. Unknown tool names
                   fail closed.
@@ -425,7 +451,7 @@ prompt
                   The scarce resource is prefill, the tokens a model must read
                   before it can answer. For offline-local providers Ghost sends
                   a focused subset of tools chosen from the prompt rather than
-                  the full catalogue of seventy-six, then reuses that subset
+                  the full catalogue of eighty, then reuses that subset
                   every round, because changing it mid-loop would invalidate the
                   server's cache of the already-processed prefix and cost more
                   than it saves.
@@ -612,30 +638,78 @@ tool result
             <li>
               Project metrics are regenerated by CI on every push rather than
               typed by hand: source and test counts, the registered tool count,
-              and line coverage, published as live badges and a generated
+              the intent and risk-tier counts, published as a generated
               METRICS.md so the numbers cannot drift from the code.
             </li>
           </ul>
 
+          <!-- ── Leadway ──────────────────────────────────────── -->
+          <h3 class="project">LLM order intake, Leadway International</h3>
+          <p class="lead">
+            Part-time AI and software engineering at a ~$100M B2B wholesale
+            distributor: turning the orders that arrive as unstructured email,
+            text and phone calls into validated ERP line items, instead of
+            retyping them by hand.
+          </p>
+
+          <div class="split split-intro">
+            <div class="split-text">
+              <p>
+                Seventy to eighty percent of this distributor's orders arrive
+                unstructured. I interviewed operations to establish that number,
+                scoped the system around it, and pitched it to the CFO and
+                Controller, who approved the build.
+              </p>
+              <p>
+                The hard part is not the language model, it is entity
+                resolution. Free-text line items have to resolve against an
+                ambiguous SKU catalogue, and case, pack and each quantities have
+                to reconcile. Structured output under a validated schema does
+                the mapping, and any line the parser is not confident about goes
+                to a human review queue rather than into the ERP.
+              </p>
+              <p>
+                Two invariants were set before any code was written. Nothing
+                writes to the ERP, which the system reads through an
+                on-premises ODBC mirror. And the parser never guesses silently.
+                The inference endpoint is a config value, so it can move to AWS
+                Bedrock or Google Vertex AI inside the client's own tenant if
+                data residency requires it.
+              </p>
+            </div>
+            <div class="split-aside">
+              <dl class="spec">
+                <div>
+                  <dt>Stack</dt>
+                  <dd>
+                    Python, Anthropic Claude API, SQLite, Sage 100 ODBC
+                  </dd>
+                </div>
+                <div>
+                  <dt>Evaluation</dt>
+                  <dd>
+                    Written before the build. Extraction accuracy and
+                    review-queue rate are measured against a held-out set of
+                    historical orders, and the pilot has a threshold it must
+                    clear before rollout.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>
+                    In build since September 2026. Phase two is a
+                    retrieval-augmented chatbot over the public product
+                    catalogue, answers grounded in retrieved passages with
+                    citations and an explicit no-answer path.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
           <!-- ── smaller shipped work ──────────────────────────── -->
           <h3>Also shipped</h3>
           <dl class="spec">
-            <div>
-              <dt>ClaudeMaxing</dt>
-              <dd>
-                A terminal dashboard for Claude Code usage. It reads the session
-                transcripts already on disk and reports per-day tokens,
-                equivalent API cost, model mix and a period-over-period
-                efficiency delta. No account, no API key. Python, MIT licensed,
-                installable from my Homebrew tap.
-                <a
-                  href="https://github.com/ryuhemingway/ClaudeMaxing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >github.com/ryuhemingway/ClaudeMaxing</a
-                >
-              </dd>
-            </div>
             <div>
               <dt>Programming Fundamentals and AI</dt>
               <dd>
@@ -650,9 +724,9 @@ tool result
             <div>
               <dt>Homebrew tap</dt>
               <dd>
-                Formulae and a cask so the tools above install with one command,
-                including a small shell utility that refreshes a Mac's Wi-Fi
-                radio for a new private address.
+                Formulae and a cask so my command-line tools install in one
+                step, including a small shell utility that refreshes a Mac's
+                Wi-Fi radio for a new private address.
                 <a
                   href="https://github.com/ryuhemingway/homebrew-tap"
                   target="_blank"
@@ -773,6 +847,24 @@ tool result
           <div class="split split-background">
             <div class="split-text">
               <dl class="spec spec-tight">
+                <div>
+                  <dt>2026–</dt>
+                  <dd>
+                    <strong>Leadway International (Bossen)</strong>, Hayward:
+                    AI and software engineering, part-time. Building an LLM
+                    order-intake system for a ~$100M B2B wholesale distributor,
+                    from the operations interviews through the schema, the
+                    review queue and the evaluation plan.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2026–</dt>
+                  <dd>
+                    <strong>Integrated Agentics</strong>, San Jose: founder and
+                    sole engineer on Ghost, a signed and notarized macOS AI
+                    assistant sold to paying users.
+                  </dd>
+                </div>
                 <div>
                   <dt>2025–2028</dt>
                   <dd>
