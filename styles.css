@@ -364,6 +364,10 @@ ul.band li {
   border-top: 1px solid var(--line-strong);
   min-width: 0;
 }
+/* a lone entry would otherwise stretch the whole row into one very long line */
+.spec > div:only-child {
+  max-width: 46rem;
+}
 .spec dt {
   color: var(--muted);
   margin-bottom: 0.35rem;
