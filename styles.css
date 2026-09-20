@@ -22,7 +22,7 @@
   --rail: 16rem;
   --gap: clamp(2rem, 3.5vw, 4rem);
   --pad: clamp(1.25rem, 2.5vw, 2.75rem);
-  --measure: 88ch;
+  --measure: 128ch;
   /* one band cell: below this width a band drops to fewer columns.
      text bands aim for three across, figure bands for two. */
   --cell: 17rem;
@@ -91,7 +91,9 @@ a:hover {
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
   gap: var(--gap);
-  max-width: 120rem;
+  /* beyond this, leftover space splits evenly instead of pooling on the
+     right of a measure-capped text column */
+  max-width: 104rem;
   margin: 0 auto;
   padding: 3rem var(--pad) 0;
 }
@@ -211,7 +213,7 @@ section + section {
   line-height: 1.35;
   letter-spacing: -0.012em;
   margin: 0 0 1.1rem;
-  max-width: 62ch;
+  max-width: 72ch;
 }
 .statement-sub {
   font-size: 1rem;
@@ -433,6 +435,30 @@ footer {
 }
 
 /* ── wide screens: more air, slightly larger type ───────── */
+
+/* ── wide screens: pair each block with its aside instead of
+      leaving the right third empty ───────────────────────── */
+@media (min-width: 1150px) {
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    column-gap: var(--gap);
+    align-items: start;
+  }
+  .split-aside,
+  .split-figures {
+    margin-top: 0;
+  }
+  /* a spec that sits in the narrow right column reads as a list, not a grid */
+  .split-aside .spec {
+    grid-template-columns: minmax(0, 1fr);
+    margin-bottom: 0;
+  }
+  /* the background timeline is the text side, so give it the wider share */
+  .split-background {
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  }
+}
 
 @media (min-width: 1500px) {
   body {

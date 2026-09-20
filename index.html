@@ -6,7 +6,7 @@
     <title>Ryu Hemingway, Software &amp; AI Engineering</title>
     <meta
       name="description"
-      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Part-time AI engineer on a production LLM order-intake system, and sole engineer behind Ghost, a shipped macOS AI assistant. Graduating April 2028. Seeking a Summer 2027 software or AI engineering internship. Authorized to work in the US without sponsorship."
+      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Part-time AI engineer on an LLM order-intake and RAG pipeline, and sole engineer behind Ghost, a shipped macOS AI assistant. Graduating April 2028. Seeking a Summer 2027 software or AI engineering internship. Authorized to work in the US without sponsorship."
     />
     <meta name="author" content="Ryu Hemingway" />
     <link rel="canonical" href="https://ryuhemingway.github.io/" />
@@ -171,16 +171,28 @@
             test harnesses, and the permission boundaries that make an agent
             safe to run on someone's machine. Most of it ships inside Ghost, a
             signed and notarized macOS AI assistant I designed, built and sell
-            as its sole engineer. I also build production LLM systems in
-            industry: I am the part-time AI and software engineer on an
-            order-intake pipeline at a ~$100M B2B wholesale distributor.
+            as its sole engineer. I also do this work in industry: I am the
+            part-time AI and software engineer on an LLM order-intake and
+            retrieval pipeline at a B2B wholesale distributor.
           </p>
 
           <ul class="proof">
-            <li><b>108,000+</b><span>lines of Swift, shipped</span></li>
-            <li><b>80</b><span>permission-gated tools</span></li>
-            <li><b>2,141</b><span>tests across 127 files</span></li>
-            <li><b>8</b><span>model providers, local and hosted</span></li>
+            <li>
+              <b>AI &amp; Software Engineer</b
+              ><span>Leadway International, part-time, since September 2026</span>
+            </li>
+            <li>
+              <b>LLM order intake</b
+              ><span>unstructured email and text into validated, schema-checked line items</span>
+            </li>
+            <li>
+              <b>Retrieval-augmented</b
+              ><span>catalogue answers grounded in retrieved passages, with citations</span>
+            </li>
+            <li>
+              <b>Human-in-the-loop</b
+              ><span>low-confidence extractions go to review, never straight to the ERP</span>
+            </li>
           </ul>
 
           <p class="actions">
@@ -644,22 +656,18 @@ tool result
           </ul>
 
           <!-- ── Leadway ──────────────────────────────────────── -->
-          <h3 class="project">LLM order intake, Leadway International</h3>
+          <h3 class="project">
+            LLM order intake and retrieval, Leadway International
+          </h3>
           <p class="lead">
-            Part-time AI and software engineering at a ~$100M B2B wholesale
-            distributor: turning the orders that arrive as unstructured email,
-            text and phone calls into validated ERP line items, instead of
-            retyping them by hand.
+            AI integration at a B2B wholesale distributor: turning the orders
+            that arrive as unstructured email and text into validated ERP line
+            items, and grounding catalogue questions in retrieved product
+            documentation instead of in the model's memory.
           </p>
 
           <div class="split split-intro">
             <div class="split-text">
-              <p>
-                Seventy to eighty percent of this distributor's orders arrive
-                unstructured. I interviewed operations to establish that number,
-                scoped the system around it, and pitched it to the CFO and
-                Controller, who approved the build.
-              </p>
               <p>
                 The hard part is not the language model, it is entity
                 resolution. Free-text line items have to resolve against an
@@ -669,8 +677,16 @@ tool result
                 to a human review queue rather than into the ERP.
               </p>
               <p>
+                The retrieval half is a RAG layer over the public product
+                catalogue: chunked ingestion of product and FAQ pages, answers
+                assembled from retrieved passages and returned with citations,
+                and an explicit no-answer path when retrieval comes back with
+                nothing relevant. A grounded answer that says "I do not know"
+                beats a fluent one that invents a part number.
+              </p>
+              <p>
                 Two invariants were set before any code was written. Nothing
-                writes to the ERP, which the system reads through an
+                writes to the ERP, which the system reads through a read-only
                 on-premises ODBC mirror. And the parser never guesses silently.
                 The inference endpoint is a config value, so it can move to AWS
                 Bedrock or Google Vertex AI inside the client's own tenant if
@@ -682,7 +698,8 @@ tool result
                 <div>
                   <dt>Stack</dt>
                   <dd>
-                    Python, Anthropic Claude API, SQLite, Sage 100 ODBC
+                    Python, Anthropic Claude API, SQLite, retrieval-augmented
+                    generation, read-only ERP ODBC integration
                   </dd>
                 </div>
                 <div>
@@ -697,10 +714,8 @@ tool result
                 <div>
                   <dt>Status</dt>
                   <dd>
-                    In build since September 2026. Phase two is a
-                    retrieval-augmented chatbot over the public product
-                    catalogue, answers grounded in retrieved passages with
-                    citations and an explicit no-answer path.
+                    In build since September 2026. Extraction first, then the
+                    retrieval layer over the public catalogue.
                   </dd>
                 </div>
               </dl>
@@ -850,11 +865,11 @@ tool result
                 <div>
                   <dt>2026–</dt>
                   <dd>
-                    <strong>Leadway International (Bossen)</strong>, Hayward:
-                    AI and software engineering, part-time. Building an LLM
-                    order-intake system for a ~$100M B2B wholesale distributor,
-                    from the operations interviews through the schema, the
-                    review queue and the evaluation plan.
+                    <strong>Leadway International</strong>, Hayward: AI and
+                    software engineering, part-time. Building LLM order intake
+                    and a retrieval-augmented catalogue layer for a B2B
+                    wholesale distributor, from the extraction schema through
+                    the review queue and the evaluation plan.
                   </dd>
                 </div>
                 <div>
