@@ -78,7 +78,7 @@ Last re-derived **19 September 2026** against Ghost 3.8.0 (commit `952ff29`).
 | ~250 ms of blocked UI before retrieval moved off the main thread                          | self-measured during the 2026-08 daily-use audit; **no generated source in the Ghost repo** — do not move this figure onto the résumé or anywhere it would be read as a re-derived metric                   |
 | Roughly thirty document and source-code formats                                           | `readableExtensions` in `Sources/Ghost/Services/GhostDocumentText.swift` (32 as of Ghost 3.8.0)                                                                                                             |
 | Graduating April 2028                                                                     | Northeastern program record                                                                                                                                                                                 |
-| Leadway International, B2B wholesale distributor                                          | my own engagement. Client revenue, internal operational percentages and the ERP product name are deliberately **not** published here at the client's expense — keep the page to my own engineering work     |
+| Leadway International, B2B wholesale distributor (PostgreSQL hybrid retrieval, vendor-run item-master export, no ERP write access) | my own engagement; matches the 2027 résumé. Client revenue, internal operational percentages and the ERP product name are deliberately **not** published here at the client's expense. Keep the page to my own engineering work |
 | 244 lessons, execution-based grading                                                      | `counts.total` in `curriculum/_index.json` and `tests/test_execution_grading.py` in the curriculum repo (private). Say "lessons", not "authored lessons": only 74 of the 244 are authored, 170 are migrated |
 | Huffman figures and claims                                                                | figures in the paper repo `ryuhemingway/Lossless-Data-Compression-Research---Huffman-Coding-Algorithm`; reproduce with `empirical_analysis.py`, seed 42                                                     |
 | Small-model claims (schema narrowing, KV-prefix reuse, streaming fallback, vision gating) | `GhostLocalToolSelector` and `DirectAPIClient+ToolLoops.swift` in the Ghost source                                                                                                                          |
@@ -88,6 +88,6 @@ If Ghost changes, update the proof row at the top of `index.html`, the Ghost fac
 résumé PDF together, so a recruiter
 reading both never sees two different numbers.
 
-`assets/Ryu-Hemingway-Resume.pdf` was regenerated on 16 August 2026 and now agrees with the page.
-Its source of truth is `~/Desktop/Admin & Career/Resume/Ryu Hemingway Resume 2026 (corrected).docx`;
+`assets/Ryu-Hemingway-Resume.pdf` was replaced on 25 September 2026 with the 2027 résumé, and the page was updated to agree with it.
+Its source of truth is `~/Desktop/Internships/Resume/Ryu_Hemingway_Resume_2027.docx`;
 edit that, export to PDF from Word, and copy the result over `assets/Ryu-Hemingway-Resume.pdf`.

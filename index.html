@@ -6,7 +6,7 @@
     <title>Ryu Hemingway, Software &amp; AI Engineering</title>
     <meta
       name="description"
-      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Part-time AI engineer on an LLM order-intake and RAG pipeline, and sole engineer behind Ghost, a shipped macOS AI assistant. Graduating April 2028. Seeking a Summer 2027 software or AI engineering internship."
+      content="Ryu Hemingway is an MS Computer Science student at Northeastern University in San Jose, specializing in agentic AI workflows, retrieval-augmented generation (RAG) pipelines, LLM tool calling, and frontier and local model integration. Part-time AI engineer on an LLM order-intake and RAG pipeline, and sole engineer behind Ghost, a shipped macOS AI assistant. Graduating April 2028. Seeking a Spring or Summer 2027 software or AI engineering internship."
     />
     <meta name="author" content="Ryu Hemingway" />
     <link rel="canonical" href="https://ryuhemingway.github.io/" />
@@ -153,8 +153,7 @@
 
           <p class="rail-note">
             <strong
-              >Seeking a Summer 2027 software or AI engineering
-              internship.</strong
+              >Seeking a Spring or Summer 2027 software or AI engineering internship.</strong
             >
             MS Computer Science candidate at Northeastern University, Align
             program, Silicon Valley. Graduating April 2028.
@@ -166,8 +165,7 @@
         <!-- ── Introduction: who, what, proof, one click to the résumé ── -->
         <section id="statement" aria-label="Introduction">
           <p class="status">
-            <span class="dot" aria-hidden="true"></span>Open to Summer 2027
-            software and AI engineering internships
+            <span class="dot" aria-hidden="true"></span>Open to Spring or Summer 2027 software and AI engineering internships
           </p>
           <p class="statement">
             I build the engineering layer around language models: agentic tool
@@ -189,8 +187,7 @@
             <li>
               <b>20+</b
               ><span
-                >paying users of Ghost; their feedback has driven every release
-                since 2.0</span
+                >paying customers of Ghost; every release since 2.0 traces to a user-reported issue</span
               >
             </li>
             <li>
@@ -244,39 +241,38 @@
               Part-time · Hayward, CA · September 2026 to present
             </p>
             <p class="lead">
-              AI integration at a B2B wholesale distributor: turning the orders
-              that arrive as unstructured email and text into validated ERP line
-              items, and grounding catalogue questions in retrieved product
-              documentation.
+              AI integration at a B2B wholesale distributor. I scoped the
+              system and won approval for it: orders that arrive as unstructured
+              email and text become validated, schema-checked line items, in
+              place of manual re-entry.
             </p>
 
             <ul class="band band-2">
               <li>
-                <b>Structured extraction and entity resolution</b>
+                <b>Entity resolution over near-identical SKUs</b>
                 Entity resolution is the hard part. Free-text line items have to
-                resolve against an ambiguous SKU catalogue, and case, pack and
-                each quantities have to reconcile. Structured output under a
-                validated schema does the mapping.
+                map to a catalog of near-identical SKUs, and case, pack and each
+                quantities have to reconcile. Schema-validated structured output
+                does the mapping.
               </li>
               <li>
                 <b>Human review queue</b>
                 Any line the parser is not confident about goes to a human
-                review queue. Nothing writes to the ERP, which the system reads
-                through a read-only on-premises ODBC mirror. Both invariants
-                were set before any code was written.
+                review queue with a drafted clarifying question, so the system
+                never guesses.
               </li>
               <li>
-                <b>RAG over the product catalogue</b>
-                Chunked ingestion of product and FAQ pages, answers assembled
-                from retrieved passages and returned with citations, and an
-                explicit no-answer path when retrieval comes back with nothing
-                relevant.
+                <b>Hybrid retrieval over the catalog</b>
+                Postgres full-text and vector similarity results are fused and
+                reranked. Hard attribute filters keep a near-miss on flavor or
+                pack type out of the candidates, and each account's past orders
+                act as a disambiguation signal.
               </li>
               <li>
                 <b>Evaluation written before the build</b>
                 Extraction accuracy and review-queue rate are measured against a
-                held-out set of historical orders, and the pilot has a threshold
-                it must clear before rollout.
+                held-out set of historical orders, and the pilot has an accuracy
+                threshold it must clear before rollout.
               </li>
             </ul>
 
@@ -284,23 +280,25 @@
               <div>
                 <dt>Stack</dt>
                 <dd>
-                  Python, Anthropic Claude API, SQLite, retrieval-augmented
-                  generation, read-only ERP ODBC integration
+                  Python, Anthropic Claude API, PostgreSQL, hybrid retrieval,
+                  structured output
                 </dd>
               </div>
               <div>
-                <dt>Data residency</dt>
+                <dt>Data path</dt>
                 <dd>
-                  The inference endpoint is a config value, so it can move to
-                  AWS Bedrock or Google Vertex AI inside the client's own tenant
-                  if data residency requires it.
+                  No write access to the ERP. The item master arrives as a
+                  vendor-run export, and output is a structured file for human
+                  import. The inference endpoint is a config value, so it can
+                  move to AWS Bedrock or Google Vertex AI inside the client's own
+                  tenant if data residency requires it.
                 </dd>
               </div>
               <div>
                 <dt>Status</dt>
                 <dd>
                   In build since September 2026. Extraction first, then the
-                  retrieval layer over the public catalogue.
+                  retrieval layer.
                 </dd>
               </div>
             </dl>
@@ -312,14 +310,13 @@
                 >Integrated Agentics</span
               >
             </h3>
-            <p class="job-meta">San Jose, CA · 2026 to present</p>
+            <p class="job-meta">San Jose, CA · January 2026 to present</p>
             <p>
               Designed, built and sell <a href="#ghost">Ghost</a>, a signed and
               notarized macOS AI assistant, end to end: the tool harness and
               model routing, the local retrieval index, the SwiftUI interface,
               the AWS licensing service behind Stripe, and the signed release
-              pipeline. 20+ paying users, whose feedback has driven every
-              release since 2.0.
+              pipeline. 20+ paying customers; every release since 2.0 traces to a user-reported issue.
             </p>
           </article>
         </section>
@@ -399,9 +396,7 @@
                   <div>
                     <dt>Status</dt>
                     <dd>
-                      Shipped and maintained, version 3.8.0, September 2026. 20+
-                      paying users, whose feedback has driven every release
-                      since 2.0.
+                      Shipped and maintained, version 3.8.0, September 2026. 20+ paying customers; every release since 2.0 traces to a user-reported issue.
                     </dd>
                   </div>
                 </dl>
@@ -885,8 +880,7 @@ tool result
               <dd>
                 LLM tool calling and function-call harnesses, agentic AI
                 workflows, structured output under JSON schema validation, model
-                routing and provider abstraction across hosted APIs and
-                on-device inference, Anthropic Claude, Gemini and DeepSeek APIs,
+                routing and provider abstraction across hosted APIs and on-device inference, prompt engineering, Anthropic Claude, Gemini and DeepSeek APIs,
                 LM Studio and Ollama
               </dd>
             </div>
@@ -895,7 +889,7 @@ tool result
               <dd>
                 Retrieval-augmented generation, multi-format document ingestion,
                 sentence-aware chunking, inverted indexes, BM25 ranking, SQLite
-                FTS5 full-text search, embeddings and semantic search,
+                FTS5 full-text search, PostgreSQL full-text and vector search, hybrid retrieval with rank fusion and reranking, embeddings and semantic search,
                 incremental index sync, entity resolution
               </dd>
             </div>
@@ -911,14 +905,13 @@ tool result
             <div>
               <dt>Frameworks</dt>
               <dd>
-                SwiftUI, AppKit, React, SQLite with FTS5, Swift Testing, pytest
+                SwiftUI, AppKit, React, SQLite with FTS5, PostgreSQL, Swift Testing, pytest, async/await concurrency
               </dd>
             </div>
             <div>
               <dt>Platforms</dt>
               <dd>
-                macOS (code signing, notarization, Sparkle updates), AWS Lambda
-                and DynamoDB, Stripe, Git and GitHub, Homebrew distribution
+                macOS (code signing, notarization, Sparkle updates), AWS (Lambda, DynamoDB, S3, CloudFront), serverless architecture, REST APIs, Stripe, Git and GitHub, GitHub Actions CI/CD, Unix and Linux
               </dd>
             </div>
             <div>
@@ -942,10 +935,7 @@ tool result
                   <dt>2025–2028</dt>
                   <dd>
                     <strong>Northeastern University</strong>, Silicon Valley: MS
-                    Computer Science, Align program. Graduating April 2028.
-                    Coursework in data structures and algorithms, algorithms,
-                    foundations of artificial intelligence, object-oriented
-                    design and discrete structures.
+                    Computer Science, Align program, GPA 3.75. Graduating April 2028. Coursework in data structures and algorithms, object-oriented design and discrete structures; in progress, algorithms and foundations of artificial intelligence.
                   </dd>
                 </div>
                 <div>
@@ -977,8 +967,14 @@ tool result
                 <div>
                   <dt>2017–2021</dt>
                   <dd>
-                    <strong>The Ohio State University</strong>: BA Psychology.
-                    Dean's List.
+                    <strong>The Ohio State University</strong>: BA Psychology. Dean's List, Fall 2020.
+                  </dd>
+                </div>
+                <div>
+                  <dt>2015</dt>
+                  <dd>
+                    <strong>Operation Smile</strong>, Bangkok: event organizer.
+                    Raised $30,000+ for cleft palate surgeries.
                   </dd>
                 </div>
               </dl>
@@ -1003,7 +999,7 @@ tool result
         <section id="contact">
           <h2>Contact</h2>
           <p>
-            Available for a Summer 2027 internship, and glad to talk before then
+            Available for a Spring or Summer 2027 internship, and glad to talk before then
             about harnesses, retrieval (RAG), evaluation, or getting local
             models to do useful work.
           </p>
