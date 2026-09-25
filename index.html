@@ -10,7 +10,8 @@
     />
     <meta name="author" content="Ryu Hemingway" />
     <link rel="canonical" href="https://ryuhemingway.github.io/" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#070a13" />
+    <meta name="color-scheme" content="dark" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ryuhemingway.github.io/" />
@@ -100,6 +101,9 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
+    <!-- the night sky: one fixed, decorative layer behind the page -->
+    <div class="sky" aria-hidden="true"></div>
+
     <div class="layout">
       <header class="rail">
         <div class="rail-inner">
@@ -107,16 +111,17 @@
           <p class="role">Software &amp; AI engineering<br />San Jose, CA</p>
 
           <nav class="nav" aria-label="Sections">
-            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#research">Research</a>
-            <a href="#background">Background</a>
+            <a href="#skills">Skills</a>
+            <a href="#background">Education</a>
             <a href="#contact">Contact</a>
           </nav>
 
           <p class="rail-cta">
             <a
-              class="btn"
+              class="btn btn-primary"
               href="assets/Ryu-Hemingway-Resume.pdf"
               target="_blank"
               rel="noopener"
@@ -147,8 +152,10 @@
           </ul>
 
           <p class="rail-note">
-            <strong>Seeking a Summer 2027 software or AI engineering
-            internship.</strong>
+            <strong
+              >Seeking a Summer 2027 software or AI engineering
+              internship.</strong
+            >
             MS Computer Science candidate at Northeastern University, Align
             program, Silicon Valley. Graduating April 2028.
           </p>
@@ -156,47 +163,50 @@
       </header>
 
       <main id="main">
-        <section id="statement">
+        <!-- ── Introduction: who, what, proof, one click to the résumé ── -->
+        <section id="statement" aria-label="Introduction">
+          <p class="status">
+            <span class="dot" aria-hidden="true"></span>Open to Summer 2027
+            software and AI engineering internships
+          </p>
           <p class="statement">
-            Master of Science in Computer Science (MSCS) student at Northeastern
-            University in San Jose, California, specializing in agentic AI
-            workflows, retrieval-augmented generation (RAG) pipelines, and the
-            integration of frontier and local models.
+            I build the engineering layer around language models: agentic tool
+            calling, retrieval-augmented generation (RAG), routing between
+            frontier and local models, and the evaluation and permission checks
+            that make an agent safe to run.
           </p>
           <p class="statement-sub">
-            My focus is the engineering layer around the model: LLM tool calling
-            and function-call harnesses, model routing across hosted APIs and
-            on-device inference, embeddings and semantic search, evaluation and
-            test harnesses, and the permission boundaries that make an agent
-            safe to run on someone's machine. Most of it ships inside Ghost, a
-            signed and notarized macOS AI assistant I designed, built and sell
-            as its sole engineer. I also do this work in industry: I am the
-            part-time AI and software engineer on an LLM order-intake and
-            retrieval pipeline at a B2B wholesale distributor.
+            I designed, built and sell <a href="#ghost">Ghost</a>, a signed and
+            notarized macOS AI assistant, as its sole engineer. I am also the
+            part-time AI and software engineer on an
+            <a href="#leadway">LLM order-intake and retrieval pipeline</a> at a
+            B2B wholesale distributor. Master of Science in Computer Science at
+            Northeastern University in San Jose, California, graduating April
+            2028.
           </p>
 
-          <ul class="proof">
+          <ul class="proof" aria-label="Ghost, by the numbers">
             <li>
-              <b>AI &amp; Software Engineer</b
-              ><span>Leadway International, part-time, since September 2026</span>
+              <b>20+</b
+              ><span
+                >paying users of Ghost; their feedback has driven every release
+                since 2.0</span
+              >
             </li>
             <li>
-              <b>Structured extraction</b
-              ><span>unstructured text into schema-validated JSON, with entity resolution</span>
+              <b>108,000+</b
+              ><span>lines of Swift, written as the sole engineer</span>
             </li>
             <li>
-              <b>RAG pipelines</b
-              ><span>answers grounded in retrieved passages, with citations and a no-answer path</span>
+              <b>80</b
+              ><span>permission-gated tools across four risk tiers</span>
             </li>
-            <li>
-              <b>Evaluation and guardrails</b
-              ><span>held-out accuracy gates, low-confidence output routed to human review</span>
-            </li>
+            <li><b>2,141</b><span>tests across 127 files</span></li>
           </ul>
 
           <p class="actions">
             <a
-              class="btn"
+              class="btn btn-primary"
               href="assets/Ryu-Hemingway-Resume.pdf"
               target="_blank"
               rel="noopener"
@@ -220,196 +230,280 @@
           </p>
         </section>
 
-        <!-- ── Skills ──────────────────────────────────────────── -->
-        <section id="skills">
-          <h2>Skills</h2>
-          <dl class="spec">
-            <div>
-              <dt>Languages</dt>
-              <dd>Swift, Python, JavaScript, SQL, C, HTML and CSS</dd>
-            </div>
-            <div>
-              <dt>LLM and agentic AI</dt>
-              <dd>
-                LLM tool calling and function-call harnesses, agentic AI
-                workflows, structured output under JSON schema validation, model
-                routing and provider abstraction across hosted APIs and
-                on-device inference, Anthropic Claude, Gemini and DeepSeek APIs,
-                LM Studio and Ollama
-              </dd>
-            </div>
-            <div>
-              <dt>Retrieval and RAG</dt>
-              <dd>
-                Retrieval-augmented generation, multi-format document ingestion,
-                sentence-aware chunking, inverted indexes, BM25 ranking, SQLite
-                FTS5 full-text search, embeddings and semantic search,
-                incremental index sync, entity resolution
-              </dd>
-            </div>
-            <div>
-              <dt>Evaluation and reliability</dt>
-              <dd>
-                Evaluation and test harnesses, held-out test sets, precision and
-                recall, human-in-the-loop review queues, permission gating and
-                risk tiering, prompt-injection boundaries, data-residency
-                constraints, CI-enforced test suites
-              </dd>
-            </div>
-            <div>
-              <dt>Frameworks</dt>
-              <dd>
-                SwiftUI, AppKit, React, SQLite with FTS5, Swift Testing, pytest
-              </dd>
-            </div>
-            <div>
-              <dt>Platforms</dt>
-              <dd>
-                macOS (code signing, notarization, Sparkle updates), AWS Lambda
-                and DynamoDB, Stripe, Git and GitHub, Homebrew distribution
-              </dd>
-            </div>
-            <div>
-              <dt>Foundations</dt>
-              <dd>
-                Data structures and algorithms, complexity analysis, data
-                compression, object-oriented design, systems thinking
-              </dd>
-            </div>
-          </dl>
+        <!-- ── Experience ──────────────────────────────────────── -->
+        <section id="experience">
+          <h2>Experience</h2>
+
+          <article class="job" id="leadway">
+            <h3 class="job-title">
+              AI &amp; Software Engineer<span class="org"
+                >Leadway International</span
+              >
+            </h3>
+            <p class="job-meta">
+              Part-time · Hayward, CA · September 2026 to present
+            </p>
+            <p class="lead">
+              AI integration at a B2B wholesale distributor: turning the orders
+              that arrive as unstructured email and text into validated ERP line
+              items, and grounding catalogue questions in retrieved product
+              documentation instead of in the model's memory.
+            </p>
+
+            <ul class="band band-2">
+              <li>
+                <b>Structured extraction and entity resolution</b>
+                The hard part is not the language model, it is entity
+                resolution. Free-text line items have to resolve against an
+                ambiguous SKU catalogue, and case, pack and each quantities have
+                to reconcile. Structured output under a validated schema does
+                the mapping.
+              </li>
+              <li>
+                <b>Human review instead of a silent guess</b>
+                Any line the parser is not confident about goes to a human
+                review queue rather than into the ERP. Nothing writes to the
+                ERP, which the system reads through a read-only on-premises ODBC
+                mirror. Both invariants were set before any code was written.
+              </li>
+              <li>
+                <b>RAG over the product catalogue</b>
+                Chunked ingestion of product and FAQ pages, answers assembled
+                from retrieved passages and returned with citations, and an
+                explicit no-answer path when retrieval comes back with nothing
+                relevant. A grounded answer that says "I do not know" beats a
+                fluent one that invents a part number.
+              </li>
+              <li>
+                <b>Evaluation written before the build</b>
+                Extraction accuracy and review-queue rate are measured against a
+                held-out set of historical orders, and the pilot has a threshold
+                it must clear before rollout.
+              </li>
+            </ul>
+
+            <dl class="spec">
+              <div>
+                <dt>Stack</dt>
+                <dd>
+                  Python, Anthropic Claude API, SQLite, retrieval-augmented
+                  generation, read-only ERP ODBC integration
+                </dd>
+              </div>
+              <div>
+                <dt>Data residency</dt>
+                <dd>
+                  The inference endpoint is a config value, so it can move to
+                  AWS Bedrock or Google Vertex AI inside the client's own tenant
+                  if data residency requires it.
+                </dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>
+                  In build since September 2026. Extraction first, then the
+                  retrieval layer over the public catalogue.
+                </dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="job">
+            <h3 class="job-title">
+              Founder &amp; Sole Engineer<span class="org"
+                >Integrated Agentics</span
+              >
+            </h3>
+            <p class="job-meta">San Jose, CA · 2026 to present</p>
+            <p>
+              Designed, built and sell <a href="#ghost">Ghost</a>, a signed and
+              notarized macOS AI assistant, end to end: the tool harness and
+              model routing, the local retrieval index, the SwiftUI interface,
+              the AWS licensing service behind Stripe, and the signed release
+              pipeline. 20+ paying users, whose feedback has driven every
+              release since 2.0.
+            </p>
+          </article>
         </section>
 
         <!-- ── Projects ────────────────────────────────────────── -->
         <section id="projects">
           <h2>Projects</h2>
-          <h3 class="project">Ghost, native macOS AI assistant</h3>
-          <p class="lead">
-            A menu-bar assistant that routes prompts to local or hosted models,
-            searches your own documents, and runs real actions on the machine.
-            Shipped, signed, notarized and sold with automatic updates.
-          </p>
 
-          <div class="split split-intro">
-            <div class="split-text">
-              <p>
-                A model can claim it wrote the file, moved the event, or read
-                the document, and a thin wrapper will print that claim as fact.
-                Ghost is built the other way around: every capability is a
-                function the app owns, the app checks permissions and path
-                boundaries before it runs, and what returns to the model is the
-                actual result, including the failure.
-              </p>
-              <p>
-                I am the only engineer and designer on it. That covers the
-                harness and routing layer, the retrieval index, the SwiftUI
-                interface, the AWS licensing service behind Stripe, and the
-                signed release pipeline.
-              </p>
-            </div>
-            <div class="split-aside">
-              <dl class="spec">
-                <div>
-                  <dt>Try it</dt>
-                  <dd>
-                    <a
-                      href="https://integratedagentics.com/ghost"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >integratedagentics.com/ghost</a
-                    >, product page and download
-                  </dd>
-                </div>
-                <div>
-                  <dt>Releases</dt>
-                  <dd>
-                    <a
-                      href="https://github.com/ryuhemingway/Ghost-App"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >github.com/ryuhemingway/Ghost-App</a
-                    >, release notes and documentation. The application source is
-                    closed; I am happy to walk through it in an interview.
-                  </dd>
-                </div>
-                <div>
-                  <dt>Stack</dt>
-                  <dd>
-                    Swift, SwiftUI, AppKit, SQLite with FTS5, AWS Lambda,
-                    DynamoDB, Stripe, Sparkle
-                  </dd>
-                </div>
-                <div>
-                  <dt>Scale</dt>
-                  <dd>
-                    108,763 lines across 245 files · 80 permission-gated tools ·
-                    2,141 tests across 127 files · 8 model providers · 14 intent
-                    kinds · 4 tool risk tiers. Every figure is regenerated from
-                    the working tree by <code>script/metrics.sh</code>, not typed
-                    by hand.
-                  </dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd>
-                    Shipped and maintained, version 3.8.0, September 2026. 20+
-                    paying users, whose feedback has driven every release since
-                    2.0.
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
+          <article id="ghost">
+            <h3 class="project">Ghost, native macOS AI assistant</h3>
+            <p class="lead">
+              A menu-bar assistant that routes prompts to local or hosted
+              models, searches your own documents, and runs real actions on the
+              machine. Shipped, signed, notarized and sold with automatic
+              updates.
+            </p>
 
-          <figure class="demo">
-            <video
-              controls
-              muted
-              playsinline
-              preload="none"
-              poster="assets/media/ghost-milky-way-poster.jpg"
-              width="1000"
-              height="563"
-            >
-              <source src="assets/media/ghost-milky-way.mp4" type="video/mp4" />
-              Your browser cannot play this video.
-              <a href="assets/media/ghost-milky-way.mp4"
-                >Download the demo (MP4, 26 seconds).</a
+            <div class="split split-intro">
+              <div class="split-text">
+                <p>
+                  A model can claim it wrote the file, moved the event, or read
+                  the document, and a thin wrapper will print that claim as
+                  fact. Ghost is built the other way around: every capability is
+                  a function the app owns, the app checks permissions and path
+                  boundaries before it runs, and what returns to the model is
+                  the actual result, including the failure.
+                </p>
+                <p>
+                  I am the only engineer and designer on it. That covers the
+                  harness and routing layer, the retrieval index, the SwiftUI
+                  interface, the AWS licensing service behind Stripe, and the
+                  signed release pipeline.
+                </p>
+              </div>
+              <div class="split-aside">
+                <dl class="spec">
+                  <div>
+                    <dt>Try it</dt>
+                    <dd>
+                      <a
+                        href="https://integratedagentics.com/ghost"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >integratedagentics.com/ghost</a
+                      >, product page and download
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Releases</dt>
+                    <dd>
+                      <a
+                        href="https://github.com/ryuhemingway/Ghost-App"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >github.com/ryuhemingway/Ghost-App</a
+                      >, release notes and documentation. The application source
+                      is closed; I am happy to walk through it in an interview.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Stack</dt>
+                    <dd>
+                      Swift, SwiftUI, AppKit, SQLite with FTS5, AWS Lambda,
+                      DynamoDB, Stripe, Sparkle
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Scale</dt>
+                    <dd>
+                      108,763 lines across 245 files · 80 permission-gated tools
+                      · 2,141 tests across 127 files · 8 model providers · 14
+                      intent kinds · 4 tool risk tiers. Every figure is
+                      regenerated from the working tree by
+                      <code>script/metrics.sh</code>, not typed by hand.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>
+                      Shipped and maintained, version 3.8.0, September 2026. 20+
+                      paying users, whose feedback has driven every release
+                      since 2.0.
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <figure class="demo">
+              <video
+                controls
+                muted
+                playsinline
+                preload="none"
+                poster="assets/media/ghost-milky-way-poster.jpg"
+                width="1000"
+                height="563"
               >
-            </video>
-            <figcaption>
-              26-second demo, no edits: Ghost is asked to build an HTML page of
-              the Milky Way and put it on the desktop, writes the file, and the
-              browser opens the page it produced. The harness executed a real
-              action rather than describing one.
-            </figcaption>
-          </figure>
+                <source
+                  src="assets/media/ghost-milky-way.mp4"
+                  type="video/mp4"
+                />
+                Your browser cannot play this video.
+                <a href="assets/media/ghost-milky-way.mp4"
+                  >Download the demo (MP4, 26 seconds).</a
+                >
+              </video>
+              <figcaption>
+                26-second demo, no edits: Ghost is asked to build an HTML page
+                of the Milky Way and put it on the desktop, writes the file, and
+                the browser opens the page it produced. The harness executed a
+                real action rather than describing one.
+              </figcaption>
+            </figure>
 
-          <h3>Capability harness</h3>
-          <div class="split">
-            <div class="split-text">
-              <ul>
-                <li>
-                  A local intent classifier runs first, with no network call,
-                  and picks one of fourteen intents. That choice sets the route:
-                  a local model in LM Studio or Ollama, a hosted API, or the
-                  user's own Claude Code or Codex subscription.
-                </li>
-                <li>
-                  The tool schema is assembled from the permissions actually
-                  enabled, so a disabled capability is invisible to the model
-                  rather than discouraged. Execution re-checks the same policy.
-                </li>
-                <li>
-                  Tools carry four risk tiers. Destructive ones always require
-                  confirmation, and the dialog receives the real argument JSON
-                  rather than the model's description of it. Unknown tool names
-                  fail closed.
-                </li>
-              </ul>
-            </div>
-            <div class="split-figures">
-              <figure>
-                <pre class="pipeline" aria-hidden="true">
+            <h4>Engineering highlights</h4>
+            <ul class="band band-2">
+              <li>
+                <b>Capability harness</b>
+                An on-device intent classifier picks one of fourteen intents
+                with no network call and sets the route. The tool schema is
+                built only from the permissions enabled, and destructive tools
+                always ask for confirmation against the real argument JSON.
+              </li>
+              <li>
+                <b>Small models, full harness</b>
+                Local models are probed for tool-calling support on first launch
+                and given a focused tool subset that protects the server's
+                prefix cache, so gemma-4-e2b in LM Studio runs the full harness
+                with no API key and no network.
+              </li>
+              <li>
+                <b>Local retrieval with citations</b>
+                Roughly thirty document and source-code formats are indexed into
+                SQLite FTS5 with on-device semantic recall. Answers return
+                cited, and retrieved text is treated as data, never as
+                instructions.
+              </li>
+              <li>
+                <b>Privacy boundary</b>
+                Messages, Notes, Mail and Contacts never reach a cloud model.
+                The rule is enforced where every provider's tool results
+                converge, so it holds for providers that do not exist yet.
+              </li>
+            </ul>
+
+            <details class="deep">
+              <summary>
+                Engineering deep dive<span
+                  >harness, small models, retrieval, privacy, distribution ·
+                  diagrams, screenshots and a second demo</span
+                >
+              </summary>
+              <div class="deep-body">
+                <h4>Capability harness</h4>
+                <div class="split">
+                  <div class="split-text">
+                    <ul>
+                      <li>
+                        A local intent classifier runs first, with no network
+                        call, and picks one of fourteen intents. That choice
+                        sets the route: a local model in LM Studio or Ollama, a
+                        hosted API, or the user's own Claude Code or Codex
+                        subscription.
+                      </li>
+                      <li>
+                        The tool schema is assembled from the permissions
+                        actually enabled, so a disabled capability is invisible
+                        to the model rather than discouraged. Execution
+                        re-checks the same policy.
+                      </li>
+                      <li>
+                        Tools carry four risk tiers. Destructive ones always
+                        require confirmation, and the dialog receives the real
+                        argument JSON rather than the model's description of it.
+                        Unknown tool names fail closed.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="split-figures">
+                    <figure>
+                      <pre class="pipeline" aria-hidden="true">
 prompt
   → intent classifier
        on device, no network
@@ -419,124 +513,127 @@ prompt
   → permission gate + path check
   → execute, re-check policy
   → verified result to the model</pre>
-                <figcaption>
-                  The request path: classified on device, routed to a local
-                  model, a hosted API or the user's own CLI subscription,
-                  checked against the permission policy and path boundaries,
-                  executed, re-checked, returned as a verified result.
-                </figcaption>
-              </figure>
-              <figure>
-                <picture>
-                  <source
-                    srcset="assets/img/ghost-routing.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="assets/img/ghost-routing.jpg"
-                    alt="A settings pane listing the active provider and model, the resolved route, and a plain-language reason for that route."
-                    loading="lazy"
-                    width="1200"
-                    height="1006"
-                  />
-                </picture>
-                <figcaption>
-                  Routing is inspectable: every answer can show the route it
-                  took and why.
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+                      <figcaption>
+                        The request path: classified on device, routed to a
+                        local model, a hosted API or the user's own CLI
+                        subscription, checked against the permission policy and
+                        path boundaries, executed, re-checked, returned as a
+                        verified result.
+                      </figcaption>
+                    </figure>
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="assets/img/ghost-routing.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/img/ghost-routing.jpg"
+                          alt="A settings pane listing the active provider and model, the resolved route, and a plain-language reason for that route."
+                          loading="lazy"
+                          width="1200"
+                          height="1006"
+                        />
+                      </picture>
+                      <figcaption>
+                        Routing is inspectable: every answer can show the route
+                        it took and why.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
 
-          <h3>Small models, full harness</h3>
-          <div class="split">
-            <div class="split-text">
-              <ul>
-                <li>
-                  A small local model is probed on first launch for tool-calling
-                  support and given the safest calling convention it can handle,
-                  so a model without native function calling still gets the
-                  tools.
-                </li>
-                <li>
-                  The scarce resource is prefill, the tokens a model must read
-                  before it can answer. For offline-local providers Ghost sends
-                  a focused subset of tools chosen from the prompt rather than
-                  the full catalogue of eighty, then reuses that subset
-                  every round, because changing it mid-loop would invalidate the
-                  server's cache of the already-processed prefix and cost more
-                  than it saves.
-                </li>
-                <li>
-                  Where a local server cannot do what a hosted one can, the
-                  harness detects it and adapts: a server that cannot stream
-                  tool calls falls back to non-streaming for the rest of the run
-                  after one failure, and a model that is not vision-capable is
-                  refused image prompts rather than asked to hallucinate them.
-                </li>
-                <li>
-                  The result: gemma-4-e2b running through LM Studio, with no API
-                  key and no network, answers with the full tool harness and its
-                  permission checks.
-                </li>
-              </ul>
-            </div>
-            <div class="split-figures">
-              <figure>
-                <video
-                  controls
-                  muted
-                  playsinline
-                  preload="none"
-                  poster="assets/media/ghost-golden-retriever-poster.jpg"
-                  width="1000"
-                  height="563"
-                >
-                  <source
-                    src="assets/media/ghost-golden-retriever.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser cannot play this video.
-                  <a href="assets/media/ghost-golden-retriever.mp4"
-                    >Download the demo (MP4, 20 seconds).</a
-                  >
-                </video>
-                <figcaption>
-                  A local small model answering with the full tool harness, no
-                  API key, no network. 20 seconds.
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+                <h4>Small models, full harness</h4>
+                <div class="split">
+                  <div class="split-text">
+                    <ul>
+                      <li>
+                        A small local model is probed on first launch for
+                        tool-calling support and given the safest calling
+                        convention it can handle, so a model without native
+                        function calling still gets the tools.
+                      </li>
+                      <li>
+                        The scarce resource is prefill, the tokens a model must
+                        read before it can answer. For offline-local providers
+                        Ghost sends a focused subset of tools chosen from the
+                        prompt rather than the full catalogue of eighty, then
+                        reuses that subset every round, because changing it
+                        mid-loop would invalidate the server's cache of the
+                        already-processed prefix and cost more than it saves.
+                      </li>
+                      <li>
+                        Where a local server cannot do what a hosted one can,
+                        the harness detects it and adapts: a server that cannot
+                        stream tool calls falls back to non-streaming for the
+                        rest of the run after one failure, and a model that is
+                        not vision-capable is refused image prompts rather than
+                        asked to hallucinate them.
+                      </li>
+                      <li>
+                        The result: gemma-4-e2b running through LM Studio, with
+                        no API key and no network, answers with the full tool
+                        harness and its permission checks.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="split-figures">
+                    <figure>
+                      <video
+                        controls
+                        muted
+                        playsinline
+                        preload="none"
+                        poster="assets/media/ghost-golden-retriever-poster.jpg"
+                        width="1000"
+                        height="563"
+                      >
+                        <source
+                          src="assets/media/ghost-golden-retriever.mp4"
+                          type="video/mp4"
+                        />
+                        Your browser cannot play this video.
+                        <a href="assets/media/ghost-golden-retriever.mp4"
+                          >Download the demo (MP4, 20 seconds).</a
+                        >
+                      </video>
+                      <figcaption>
+                        A local small model answering with the full tool
+                        harness, no API key, no network. 20 seconds.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
 
-          <h3>Local retrieval</h3>
-          <div class="split">
-            <div class="split-text">
-              <ul>
-                <li>
-                  Roughly thirty document and source-code formats are indexed
-                  into a local SQLite database with FTS5, with on-device
-                  semantic recall for queries where wording and meaning diverge.
-                  Answers return cited, with the source available.
-                </li>
-                <li>
-                  Match terms are split on non-alphanumerics so no FTS operator
-                  survives from user input, and retrieved passages are
-                  delineated before the model sees them, under a standing rule
-                  that retrieved text is data and never instructions. The index
-                  is chmod 0600 on open.
-                </li>
-                <li>
-                  Retrieval moved off the main thread after profiling showed
-                  roughly 250&nbsp;ms of blocked UI on a typical question, and
-                  over a second on the fallback path, before the request had
-                  left the machine.
-                </li>
-              </ul>
-            </div>
-            <div class="split-figures">
-              <figure>
-                <pre class="pipeline" aria-hidden="true">
+                <h4>Local retrieval</h4>
+                <div class="split">
+                  <div class="split-text">
+                    <ul>
+                      <li>
+                        Roughly thirty document and source-code formats are
+                        indexed into a local SQLite database with FTS5, with
+                        on-device semantic recall for queries where wording and
+                        meaning diverge. Answers return cited, with the source
+                        available.
+                      </li>
+                      <li>
+                        Match terms are split on non-alphanumerics so no FTS
+                        operator survives from user input, and retrieved
+                        passages are delineated before the model sees them,
+                        under a standing rule that retrieved text is data and
+                        never instructions. The index is chmod 0600 on open.
+                      </li>
+                      <li>
+                        Retrieval moved off the main thread after profiling
+                        showed roughly 250&nbsp;ms of blocked UI on a typical
+                        question, and over a second on the fallback path, before
+                        the request had left the machine.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="split-figures">
+                    <figure>
+                      <pre class="pipeline" aria-hidden="true">
 question
   → FTS5 match
        + on-device semantic recall
@@ -545,56 +642,61 @@ question
   → model answers with inline
        citation markers
   → markers resolve to the source</pre>
-                <figcaption>
-                  The retrieval path: a question runs against the local
-                  full-text index and an on-device semantic pass, passages are
-                  delineated as untrusted data, and the answer carries citation
-                  markers that resolve back to the indexed source.
-                </figcaption>
-              </figure>
-              <figure>
-                <picture>
-                  <source srcset="assets/img/ghost-rag.webp" type="image/webp" />
-                  <img
-                    src="assets/img/ghost-rag.jpg"
-                    alt="An answer about the James Webb telescope with bracketed numbers after each claim and a references list beneath it."
-                    loading="lazy"
-                    width="1200"
-                    height="1156"
-                  />
-                </picture>
-                <figcaption>
-                  Inline citation markers resolve to a reference list.
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+                      <figcaption>
+                        The retrieval path: a question runs against the local
+                        full-text index and an on-device semantic pass, passages
+                        are delineated as untrusted data, and the answer carries
+                        citation markers that resolve back to the indexed
+                        source.
+                      </figcaption>
+                    </figure>
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="assets/img/ghost-rag.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/img/ghost-rag.jpg"
+                          alt="An answer about the James Webb telescope with bracketed numbers after each claim and a references list beneath it."
+                          loading="lazy"
+                          width="1200"
+                          height="1156"
+                        />
+                      </picture>
+                      <figcaption>
+                        Inline citation markers resolve to a reference list.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
 
-          <h3>Privacy boundary</h3>
-          <div class="split">
-            <div class="split-text">
-              <ul>
-                <li>
-                  Messages, Notes, Mail and Contacts never enter a cloud model's
-                  context: not as an answer, not as background memory, not as a
-                  tool result folded back into the conversation.
-                </li>
-                <li>
-                  The rule lives in one sensitivity classifier and is enforced
-                  where every provider's tool results converge, so it holds for
-                  providers that do not exist yet.
-                </li>
-                <li>
-                  The tradeoff is real: acting on those apps requires a local
-                  model, and without one Ghost refuses rather than degrading
-                  quietly. Every capability ships off by default; API keys live
-                  in the Keychain.
-                </li>
-              </ul>
-            </div>
-            <div class="split-figures">
-              <figure>
-                <pre class="pipeline" aria-hidden="true">
+                <h4>Privacy boundary</h4>
+                <div class="split">
+                  <div class="split-text">
+                    <ul>
+                      <li>
+                        Messages, Notes, Mail and Contacts never enter a cloud
+                        model's context: not as an answer, not as background
+                        memory, not as a tool result folded back into the
+                        conversation.
+                      </li>
+                      <li>
+                        The rule lives in one sensitivity classifier and is
+                        enforced where every provider's tool results converge,
+                        so it holds for providers that do not exist yet.
+                      </li>
+                      <li>
+                        The tradeoff is real: acting on those apps requires a
+                        local model, and without one Ghost refuses rather than
+                        degrading quietly. Every capability ships off by
+                        default; API keys live in the Keychain.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="split-figures">
+                    <figure>
+                      <pre class="pipeline" aria-hidden="true">
 tool result
   → sensitivity classifier
 
@@ -606,120 +708,57 @@ tool result
 
      everything else
        → normal path</pre>
-                <figcaption>
-                  The egress rule: every tool result passes a sensitivity
-                  classifier at the single point where all providers converge.
-                  Personal-app content reaches a local model and is refused to a
-                  cloud one, with the refusal explained rather than silently
-                  downgraded.
-                </figcaption>
-              </figure>
-              <figure>
-                <picture>
-                  <source
-                    srcset="assets/img/ghost-privacy.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="assets/img/ghost-privacy.jpg"
-                    alt="A privacy settings pane with seven independent switches, one per capability, each with a one-line description of what it permits."
-                    loading="lazy"
-                    width="1200"
-                    height="1006"
-                  />
-                </picture>
-                <figcaption>
-                  Seven capability switches; disabled tools are removed before
-                  the model sees a schema.
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <h3>Distribution</h3>
-          <ul class="band">
-            <li>
-              Signed and notarized release builds with hardened runtime,
-              distributed through Sparkle with an EdDSA-signed appcast.
-            </li>
-            <li>
-              Licensing runs on AWS Lambda and DynamoDB behind Stripe, issuing
-              signed grants the client verifies offline.
-            </li>
-            <li>
-              Project metrics are regenerated by CI on every push rather than
-              typed by hand: source and test counts, the registered tool count,
-              the intent and risk-tier counts, published as a generated
-              METRICS.md so the numbers cannot drift from the code.
-            </li>
-          </ul>
-
-          <!-- ── Leadway ──────────────────────────────────────── -->
-          <h3 class="project">
-            LLM order intake and retrieval, Leadway International
-          </h3>
-          <p class="lead">
-            AI integration at a B2B wholesale distributor: turning the orders
-            that arrive as unstructured email and text into validated ERP line
-            items, and grounding catalogue questions in retrieved product
-            documentation instead of in the model's memory.
-          </p>
-
-          <div class="split split-intro">
-            <div class="split-text">
-              <p>
-                The hard part is not the language model, it is entity
-                resolution. Free-text line items have to resolve against an
-                ambiguous SKU catalogue, and case, pack and each quantities have
-                to reconcile. Structured output under a validated schema does
-                the mapping, and any line the parser is not confident about goes
-                to a human review queue rather than into the ERP.
-              </p>
-              <p>
-                The retrieval half is a RAG layer over the public product
-                catalogue: chunked ingestion of product and FAQ pages, answers
-                assembled from retrieved passages and returned with citations,
-                and an explicit no-answer path when retrieval comes back with
-                nothing relevant. A grounded answer that says "I do not know"
-                beats a fluent one that invents a part number.
-              </p>
-              <p>
-                Two invariants were set before any code was written. Nothing
-                writes to the ERP, which the system reads through a read-only
-                on-premises ODBC mirror. And the parser never guesses silently.
-                The inference endpoint is a config value, so it can move to AWS
-                Bedrock or Google Vertex AI inside the client's own tenant if
-                data residency requires it.
-              </p>
-            </div>
-            <div class="split-aside">
-              <dl class="spec">
-                <div>
-                  <dt>Stack</dt>
-                  <dd>
-                    Python, Anthropic Claude API, SQLite, retrieval-augmented
-                    generation, read-only ERP ODBC integration
-                  </dd>
+                      <figcaption>
+                        The egress rule: every tool result passes a sensitivity
+                        classifier at the single point where all providers
+                        converge. Personal-app content reaches a local model and
+                        is refused to a cloud one, with the refusal explained
+                        rather than silently downgraded.
+                      </figcaption>
+                    </figure>
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="assets/img/ghost-privacy.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="assets/img/ghost-privacy.jpg"
+                          alt="A privacy settings pane with seven independent switches, one per capability, each with a one-line description of what it permits."
+                          loading="lazy"
+                          width="1200"
+                          height="1006"
+                        />
+                      </picture>
+                      <figcaption>
+                        Seven capability switches; disabled tools are removed
+                        before the model sees a schema.
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
-                <div>
-                  <dt>Evaluation</dt>
-                  <dd>
-                    Written before the build. Extraction accuracy and
-                    review-queue rate are measured against a held-out set of
-                    historical orders, and the pilot has a threshold it must
-                    clear before rollout.
-                  </dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd>
-                    In build since September 2026. Extraction first, then the
-                    retrieval layer over the public catalogue.
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
+
+                <h4>Distribution</h4>
+                <ul class="band">
+                  <li>
+                    Signed and notarized release builds with hardened runtime,
+                    distributed through Sparkle with an EdDSA-signed appcast.
+                  </li>
+                  <li>
+                    Licensing runs on AWS Lambda and DynamoDB behind Stripe,
+                    issuing signed grants the client verifies offline.
+                  </li>
+                  <li>
+                    Project metrics are regenerated by CI on every push rather
+                    than typed by hand: source and test counts, the registered
+                    tool count, the intent and risk-tier counts, published as a
+                    generated METRICS.md so the numbers cannot drift from the
+                    code.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </article>
 
           <!-- ── smaller shipped work ──────────────────────────── -->
           <h3>Also shipped</h3>
@@ -730,9 +769,9 @@ tool result
                 A terminal curriculum for C, Python, Java and AI engineering
                 principles: 244 lessons that grade by compiling and running your
                 code and showing the real compiler error and an output diff,
-                rather than pattern-matching your source. Works
-                offline; the AI layer explains but can never change whether an
-                exercise passed. Private repository, and I am glad to demo it.
+                rather than pattern-matching your source. Works offline; the AI
+                layer explains but can never change whether an exercise passed.
+                Private repository, and I am glad to demo it.
               </dd>
             </div>
           </dl>
@@ -840,31 +879,72 @@ tool result
           </dl>
         </section>
 
-        <!-- ── Background ──────────────────────────────────────── -->
+        <!-- ── Skills ──────────────────────────────────────────── -->
+        <section id="skills">
+          <h2>Skills</h2>
+          <dl class="spec">
+            <div>
+              <dt>Languages</dt>
+              <dd>Swift, Python, JavaScript, SQL, C, HTML and CSS</dd>
+            </div>
+            <div>
+              <dt>LLM and agentic AI</dt>
+              <dd>
+                LLM tool calling and function-call harnesses, agentic AI
+                workflows, structured output under JSON schema validation, model
+                routing and provider abstraction across hosted APIs and
+                on-device inference, Anthropic Claude, Gemini and DeepSeek APIs,
+                LM Studio and Ollama
+              </dd>
+            </div>
+            <div>
+              <dt>Retrieval and RAG</dt>
+              <dd>
+                Retrieval-augmented generation, multi-format document ingestion,
+                sentence-aware chunking, inverted indexes, BM25 ranking, SQLite
+                FTS5 full-text search, embeddings and semantic search,
+                incremental index sync, entity resolution
+              </dd>
+            </div>
+            <div>
+              <dt>Evaluation and reliability</dt>
+              <dd>
+                Evaluation and test harnesses, held-out test sets, precision and
+                recall, human-in-the-loop review queues, permission gating and
+                risk tiering, prompt-injection boundaries, data-residency
+                constraints, CI-enforced test suites
+              </dd>
+            </div>
+            <div>
+              <dt>Frameworks</dt>
+              <dd>
+                SwiftUI, AppKit, React, SQLite with FTS5, Swift Testing, pytest
+              </dd>
+            </div>
+            <div>
+              <dt>Platforms</dt>
+              <dd>
+                macOS (code signing, notarization, Sparkle updates), AWS Lambda
+                and DynamoDB, Stripe, Git and GitHub, Homebrew distribution
+              </dd>
+            </div>
+            <div>
+              <dt>Foundations</dt>
+              <dd>
+                Data structures and algorithms, complexity analysis, data
+                compression, object-oriented design, systems thinking
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- ── Education and background ────────────────────────── -->
         <section id="background">
-          <h2>Background</h2>
+          <h2>Education &amp; background</h2>
 
           <div class="split split-background">
             <div class="split-text">
               <dl class="spec spec-tight">
-                <div>
-                  <dt>2026–</dt>
-                  <dd>
-                    <strong>Leadway International</strong>, Hayward: AI and
-                    software engineering, part-time. Building LLM order intake
-                    and a retrieval-augmented catalogue layer for a B2B
-                    wholesale distributor, from the extraction schema through
-                    the review queue and the evaluation plan.
-                  </dd>
-                </div>
-                <div>
-                  <dt>2026–</dt>
-                  <dd>
-                    <strong>Integrated Agentics</strong>, San Jose: founder and
-                    sole engineer on Ghost, a signed and notarized macOS AI
-                    assistant sold to paying users.
-                  </dd>
-                </div>
                 <div>
                   <dt>2025–2028</dt>
                   <dd>
@@ -939,7 +1019,7 @@ tool result
             models to do useful work.
           </p>
           <p class="actions">
-            <a class="btn" href="mailto:hemingwayrb@gmail.com"
+            <a class="btn btn-primary" href="mailto:hemingwayrb@gmail.com"
               >hemingwayrb@gmail.com</a
             >
             <a
