@@ -247,32 +247,30 @@
               AI integration at a B2B wholesale distributor: turning the orders
               that arrive as unstructured email and text into validated ERP line
               items, and grounding catalogue questions in retrieved product
-              documentation instead of in the model's memory.
+              documentation.
             </p>
 
             <ul class="band band-2">
               <li>
                 <b>Structured extraction and entity resolution</b>
-                The hard part is not the language model, it is entity
-                resolution. Free-text line items have to resolve against an
-                ambiguous SKU catalogue, and case, pack and each quantities have
-                to reconcile. Structured output under a validated schema does
-                the mapping.
+                Entity resolution is the hard part. Free-text line items have to
+                resolve against an ambiguous SKU catalogue, and case, pack and
+                each quantities have to reconcile. Structured output under a
+                validated schema does the mapping.
               </li>
               <li>
-                <b>Human review instead of a silent guess</b>
+                <b>Human review queue</b>
                 Any line the parser is not confident about goes to a human
-                review queue rather than into the ERP. Nothing writes to the
-                ERP, which the system reads through a read-only on-premises ODBC
-                mirror. Both invariants were set before any code was written.
+                review queue. Nothing writes to the ERP, which the system reads
+                through a read-only on-premises ODBC mirror. Both invariants
+                were set before any code was written.
               </li>
               <li>
                 <b>RAG over the product catalogue</b>
                 Chunked ingestion of product and FAQ pages, answers assembled
                 from retrieved passages and returned with citations, and an
                 explicit no-answer path when retrieval comes back with nothing
-                relevant. A grounded answer that says "I do not know" beats a
-                fluent one that invents a part number.
+                relevant.
               </li>
               <li>
                 <b>Evaluation written before the build</b>
@@ -344,10 +342,10 @@
                 <p>
                   A model can claim it wrote the file, moved the event, or read
                   the document, and a thin wrapper will print that claim as
-                  fact. Ghost is built the other way around: every capability is
-                  a function the app owns, the app checks permissions and path
-                  boundaries before it runs, and what returns to the model is
-                  the actual result, including the failure.
+                  fact. In Ghost, every capability is a function the app owns,
+                  the app checks permissions and path boundaries before it runs,
+                  and what returns to the model is the actual result, including
+                  the failure.
                 </p>
                 <p>
                   I am the only engineer and designer on it. That covers the
@@ -395,7 +393,7 @@
                       · 2,141 tests across 127 files · 8 model providers · 14
                       intent kinds · 4 tool risk tiers. Every figure is
                       regenerated from the working tree by
-                      <code>script/metrics.sh</code>, not typed by hand.
+                      <code>script/metrics.sh</code>.
                     </dd>
                   </div>
                   <div>
@@ -432,8 +430,7 @@
               <figcaption>
                 26-second demo, no edits: Ghost is asked to build an HTML page
                 of the Milky Way and put it on the desktop, writes the file, and
-                the browser opens the page it produced. The harness executed a
-                real action rather than describing one.
+                the browser opens the page it produced.
               </figcaption>
             </figure>
 
@@ -488,8 +485,8 @@
                         subscription.
                       </li>
                       <li>
-                        The tool schema is assembled from the permissions
-                        actually enabled, so a disabled capability is invisible
+                        The tool schema is assembled from the permissions the
+                        user has enabled, so a disabled capability is invisible
                         to the model rather than discouraged. Execution
                         re-checks the same policy.
                       </li>
@@ -536,8 +533,7 @@ prompt
                         />
                       </picture>
                       <figcaption>
-                        Routing is inspectable: every answer can show the route
-                        it took and why.
+                        Every answer can show the route it took and why.
                       </figcaption>
                     </figure>
                   </div>
@@ -566,14 +562,13 @@ prompt
                         Where a local server cannot do what a hosted one can,
                         the harness detects it and adapts: a server that cannot
                         stream tool calls falls back to non-streaming for the
-                        rest of the run after one failure, and a model that is
-                        not vision-capable is refused image prompts rather than
-                        asked to hallucinate them.
+                        rest of the run after one failure, and a model without
+                        vision support is not sent image prompts.
                       </li>
                       <li>
-                        The result: gemma-4-e2b running through LM Studio, with
-                        no API key and no network, answers with the full tool
-                        harness and its permission checks.
+                        With these adaptations, gemma-4-e2b running through LM
+                        Studio, with no API key and no network, answers with the
+                        full tool harness and its permission checks.
                       </li>
                     </ul>
                   </div>
@@ -677,8 +672,8 @@ question
                     <ul>
                       <li>
                         Messages, Notes, Mail and Contacts never enter a cloud
-                        model's context: not as an answer, not as background
-                        memory, not as a tool result folded back into the
+                        model's context, whether as an answer, as background
+                        memory, or as a tool result folded back into the
                         conversation.
                       </li>
                       <li>
@@ -687,10 +682,10 @@ question
                         so it holds for providers that do not exist yet.
                       </li>
                       <li>
-                        The tradeoff is real: acting on those apps requires a
-                        local model, and without one Ghost refuses rather than
-                        degrading quietly. Every capability ships off by
-                        default; API keys live in the Keychain.
+                        Acting on those apps requires a local model. Without
+                        one, Ghost refuses the request and says why. Every
+                        capability ships off by default; API keys live in the
+                        Keychain.
                       </li>
                     </ul>
                   </div>
@@ -712,8 +707,7 @@ tool result
                         The egress rule: every tool result passes a sensitivity
                         classifier at the single point where all providers
                         converge. Personal-app content reaches a local model and
-                        is refused to a cloud one, with the refusal explained
-                        rather than silently downgraded.
+                        is refused to a cloud one, and the user is told why.
                       </figcaption>
                     </figure>
                     <figure>
@@ -796,9 +790,8 @@ tool result
                   alphabet size n and input length m. Counting and encoding are
                   Θ(m); the merge loop is O(n log n), with the log factor traced
                   to sorting, not merging. Working space is Θ(n), independent of
-                  input length. Optimality is argued as a proof rather than
-                  asserted, through the exchange argument and optimal
-                  substructure.
+                  input length. Optimality is proved through the exchange
+                  argument and optimal substructure.
                 </li>
                 <li>
                   Two experiments test the theory against measurement, seeded
@@ -809,13 +802,13 @@ tool result
                   of the entropy floor.
                 </li>
                 <li>
-                  The interesting findings are the two failure modes. Below
-                  roughly a thousand characters the file grows: the serialized
-                  tree it must carry costs more than compression saves. And a
-                  codeword cannot be shorter than one bit, so a distribution
-                  split nine-to-one compresses to exactly the same size as an
-                  even split (1,267 bytes for both), the limitation arithmetic
-                  coding was invented to remove.
+                  The experiments also found two failure modes. Below roughly a
+                  thousand characters the file grows: the serialized tree it
+                  must carry costs more than compression saves. And a codeword
+                  cannot be shorter than one bit, so a distribution split
+                  nine-to-one compresses to exactly the same size as an even
+                  split (1,267 bytes for both), the limitation arithmetic coding
+                  was invented to remove.
                 </li>
               </ul>
             </div>
@@ -991,16 +984,12 @@ tool result
               </dl>
             </div>
             <div class="split-aside">
-              <h3>Why the pivot matters</h3>
+              <h3>Why leave medicine for CS?</h3>
               <p>
-                A year of medical school, and before it a year as a certified
-                scribe in pediatric orthopedics, taught me one thing that
-                transfers directly: record what actually happened, precisely
-                enough that someone else can act on it safely, and notice when
-                the record and the reality have drifted apart. That is what a
-                tool harness does for a language model, and it is why I care
-                about the difference between a claimed result and a verified
-                one.
+                I believe AI engineering is where the next big improvements in
+                people's lives will come from, in medicine and well beyond it. I
+                left medical school to learn how to build those systems, and to
+                help make sure what they do for people is good.
               </p>
               <p>
                 I started computer science in September 2025 and shipped a paid,

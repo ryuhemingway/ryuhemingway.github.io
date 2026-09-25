@@ -24,12 +24,12 @@ Screenshots ship as `<picture>` with a WebP source and a JPEG fallback. The demo
 
 ## Page order
 
-Built for a recruiter's first skim, then an engineer's second read:
+Ordered for a recruiter's first skim, with the engineering detail further down:
 
 1. Availability, a one-sentence specialty, and four proof numbers, all above the fold at 1440×900
 2. Experience, job title first (Leadway, then Integrated Agentics)
 3. Projects: Ghost summary, demo, four highlights, then the full engineering deep dive in a
-   `<details>` block, so the detail is one click away rather than 3,000 px of scrolling
+   `<details>` block, which saves about 3,000 px of scrolling
 4. Research, Skills, Education & background, Contact
 
 ## The sky
